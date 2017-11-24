@@ -1,15 +1,10 @@
 //Nombre, ciudad, precio, piscina(T/F)
-
 //media precios, precio mas barato, lista de los hoteles con los datos
-
 //definiciones
 var aHoteles = new Array();
 
-
 //main code
-
 fMenu(aHoteles);
-
 
 //funciones
 function fMenu (aHotelesAux)
@@ -48,6 +43,7 @@ function fMenu (aHotelesAux)
   }
 }
 
+
 function fRecibir ()
 {
   var aHotelAux = new Array();
@@ -57,6 +53,7 @@ function fRecibir ()
   aHotelAux[3] = fRecibirBool("Tiene piscina?");
   return aHotelAux;
 }
+
 
 function fRecibirNumero (sTexto)
 {
@@ -73,6 +70,7 @@ function fRecibirNumero (sTexto)
   }
   return iPrecio;
 }
+
 
 function fRecibirBool(sTexto)
 {
@@ -97,6 +95,7 @@ function fRecibirBool(sTexto)
   }
 }
 
+
 function fMedia (aHotelesAuxAux)
 {
   var iSumaAux = 0;
@@ -106,6 +105,7 @@ function fMedia (aHotelesAuxAux)
   }
   return iSumaAux/aHotelesAuxAux.length;
 }
+
 
 function fMenor (aHotelesAuxAux)
 {
@@ -119,6 +119,7 @@ function fMenor (aHotelesAuxAux)
   }
   return iMenor;
 }
+
 
 function fLista (aHotelesAuxAux)
 {
@@ -136,6 +137,8 @@ function fLista (aHotelesAuxAux)
   }
   alert(sTexto);
 }
+
+
 function fMostrarHotel (aHotelAuxAux)
 {
   var sTextoAux = "";
