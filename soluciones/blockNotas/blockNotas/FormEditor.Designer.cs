@@ -46,7 +46,7 @@
             this.tsMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(522, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -65,32 +65,32 @@
             // tsMenuItemAbrir
             // 
             this.tsMenuItemAbrir.Name = "tsMenuItemAbrir";
-            this.tsMenuItemAbrir.Size = new System.Drawing.Size(152, 22);
+            this.tsMenuItemAbrir.Size = new System.Drawing.Size(116, 22);
             this.tsMenuItemAbrir.Text = "A&brir";
             this.tsMenuItemAbrir.Click += new System.EventHandler(this.tsMenuItemAbrir_Click);
             // 
             // tsMenuItemGuardar
             // 
             this.tsMenuItemGuardar.Name = "tsMenuItemGuardar";
-            this.tsMenuItemGuardar.Size = new System.Drawing.Size(152, 22);
+            this.tsMenuItemGuardar.Size = new System.Drawing.Size(116, 22);
             this.tsMenuItemGuardar.Text = "&Guardar";
             this.tsMenuItemGuardar.Click += new System.EventHandler(this.tsMenuItemGuardar_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(113, 6);
             // 
             // tsMenuItemCerrar
             // 
             this.tsMenuItemCerrar.Name = "tsMenuItemCerrar";
-            this.tsMenuItemCerrar.Size = new System.Drawing.Size(152, 22);
+            this.tsMenuItemCerrar.Size = new System.Drawing.Size(116, 22);
             this.tsMenuItemCerrar.Text = "&Cerrar";
             // 
             // tsMenuItemSalir
             // 
             this.tsMenuItemSalir.Name = "tsMenuItemSalir";
-            this.tsMenuItemSalir.Size = new System.Drawing.Size(152, 22);
+            this.tsMenuItemSalir.Size = new System.Drawing.Size(116, 22);
             this.tsMenuItemSalir.Text = "&Salir";
             // 
             // tbEditorArea
@@ -99,7 +99,7 @@
             this.tbEditorArea.Location = new System.Drawing.Point(0, 24);
             this.tbEditorArea.Multiline = true;
             this.tbEditorArea.Name = "tbEditorArea";
-            this.tbEditorArea.Size = new System.Drawing.Size(522, 348);
+            this.tbEditorArea.Size = new System.Drawing.Size(784, 385);
             this.tbEditorArea.TabIndex = 1;
             // 
             // openFileDialog1
@@ -110,7 +110,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 372);
+            this.ClientSize = new System.Drawing.Size(784, 409);
             this.Controls.Add(this.tbEditorArea);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

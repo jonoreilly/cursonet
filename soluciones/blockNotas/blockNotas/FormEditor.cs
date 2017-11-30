@@ -34,7 +34,6 @@ namespace blockNotas
             {
                 try
                 {
-                    
                     Stream myStream = openFile.OpenFile();
                     if (myStream != null)
                     {
@@ -47,7 +46,6 @@ namespace blockNotas
                     {
                         MessageBox.Show("No has seleccionao na, patan");
                     }
-
                 }
                 catch (Exception)
                 {
