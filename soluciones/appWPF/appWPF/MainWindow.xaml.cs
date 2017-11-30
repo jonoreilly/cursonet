@@ -27,9 +27,9 @@ namespace appWPF
 
         private void btnEstablecerDiaExamen_Click(object sender, RoutedEventArgs e)
         {
-            claseAppWPF miClase = new claseAppWPF();
-            miClase.SetExamen("lunes");
-            MessageBox.Show("OK");
+            Cliente miCliente = new Cliente();
+            miCliente.SetCodigoCliente("Pepe", "Ramirez");
+            miCliente.GetPedidos();
         }
     }
 }
