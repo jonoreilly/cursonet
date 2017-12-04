@@ -15,18 +15,52 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Azure" BorderBrush="AliceBlue" BorderThickness="4">
+        
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="Azure" BorderBrush="AliceBlue" BorderThickness="4" Margin="5">
             <StackPanel>
                 <DockPanel Margin="10">
                     <TextBlock x:Name="tbNombreCurso" Text="Nombre del curso :  " Padding="5"/>
                     <TextBox x:Name="txtNombreCurso" Padding="5" Margin="10,0,0,0"/>
                 </DockPanel>
-                <Button x:Name="btnGuardarCurso" Content="Guardar" Width="240">
-                    <!-- <Button.Content>
-                    
-                    </Button.Content> -->
-                </Button>
+                <Button x:Name="btnGuardarCurso" Content="Guardar" Width="230" Click="btnGuardarCurso_Click"/>
             </StackPanel>
         </Border>
+
+        <Border Grid.Row="1" Grid.Column="0" Background="Azure" BorderBrush="AliceBlue" BorderThickness="4" Margin="5">
+            <StackPanel>
+                <DockPanel Margin="10">
+                    <TextBlock x:Name="tbNombreAlumno" Text="Nombre del Alumno :  " Padding="5"/>
+                    <TextBox x:Name="txtNombreAlumno" Padding="5" Margin="10,0,0,0"/>
+                </DockPanel>
+                <DockPanel Margin="10">
+                    <TextBlock x:Name="tbApellidoAlumno" Text="Apellido del Alumno :  " Padding="5"/>
+                    <TextBox  x:Name="txtApellidoAlumno" Padding="5" Margin="10,0,0,0"/>
+                </DockPanel>
+                <DockPanel Margin="10">
+                    <TextBlock x:Name="tbCursoAlumno" Text="Curso del Alumno :  " Padding="5"/>
+                    <TextBox  x:Name="txtCursoAlumno" Padding="5" Margin="10,0,0,0"/>
+                </DockPanel>
+                <Button x:Name="btnGuardarAlumno" Content="Guardar" Width="230"/>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Grid.Column="1" Background="Azure" BorderBrush="AliceBlue" BorderThickness="4" Margin="5">
+            <StackPanel>
+                <DockPanel Margin="10">
+                    <TextBlock x:Name="tbNombreProfesor" Text="Nombre del Profesor :  " Padding="5"/>
+                    <TextBox x:Name="txtNombreProfesor" Padding="5" Margin="10,0,0,0"/>
+                </DockPanel>
+                <DockPanel Margin="10">
+                    <TextBlock x:Name="tbApellidoProfesor" Text="Apellido del Profesor :  " Padding="5"/>
+                    <TextBox  x:Name="txtApellidoProfesor" Padding="5" Margin="10,0,0,0"/>
+                </DockPanel>
+                <DockPanel Margin="10">
+                    <TextBlock x:Name="tbCursoProfesor" Text="Curso del Profesor :  " Padding="5"/>
+                    <TextBox  x:Name="txtCursoProfesor" Padding="5" Margin="10,0,0,0"/>
+                </DockPanel>
+                <Button x:Name="btnGuardarProfesor" Content="Guardar" Width="230"/>
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Window>

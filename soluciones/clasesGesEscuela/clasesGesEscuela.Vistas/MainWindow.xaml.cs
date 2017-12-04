@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using clasesGesEscuela.Cursos;
 
 namespace clasesGesEscuela.Vistas
 {
@@ -23,6 +24,21 @@ namespace clasesGesEscuela.Vistas
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void btnGuardarCurso_Click(object sender, RoutedEventArgs e)
+        {
+            Curso nuevoCurso = new Curso(txtNombreCurso.Text);
+            ColeDB.cursos.Add(nuevoCurso);
+
+            int misCursos = BuscarMisCursos();
+        }
+
+        private int BuscarMisCursos()
+        {
+            var cuentaCursos = (from c in ColeDB.cursos
+                                   select c).Count();
+            return cuentaCursos;
         }
     }
 }
