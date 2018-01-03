@@ -12,11 +12,37 @@ namespace Multiformulario
 {
     public partial class FormPrincipal : Form
     {
-        private int childFormNumber = 0;
+
+        private string usuario = "";
+        private bool acceso = false;
+
+        public void Autenticarse (string elUsuario)
+        {
+            usuario = elUsuario;
+            acceso = true;
+        }
+
+        public void desAutenticarse ()
+        {
+            usuario = "";
+            acceso = false;
+        }
+
+        public string credenciales ()
+        {
+            if (acceso == true)
+            {
+                return usuario;
+            }
+            return "";
+        }
+
+        //private int childFormNumber = 0;
 
         private int num_factura;
 
         public int Num_factura { get => num_factura; set => num_factura = value; }
+
 
         public FormPrincipal()
         {
@@ -25,9 +51,9 @@ namespace Multiformulario
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
+            Autenticacion childForm = new Autenticacion();
             childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
+            childForm.StartPosition = FormStartPosition.CenterScreen;
             childForm.Show();
         }
 
@@ -146,6 +172,7 @@ namespace Multiformulario
             FrmCartera frm = new FrmCartera();
             frm.MdiParent = this;
             frm.Show();
+
         }
     }
 }
