@@ -1,0 +1,49 @@
+
+p
+{
+  background-color:red;
+}
+
+
+header
+{
+  color:blue
+}
+
+
+nav
+{
+  background-color:green;
+  min-height:50px; width:40%
+}
+
+
+footer
+{
+  background-color:yellow;
+  height:50px
+}
+
+
+h1
+{
+  border: solid;
+  border-color: blue
+}
+
+
+flotante
+{
+  float: right
+}
+
+
+miclase negrita
+{
+
+}
+
+:menu li
+{
+  color: red
+}
