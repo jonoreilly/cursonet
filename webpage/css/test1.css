@@ -32,18 +32,18 @@ h1
 }
 
 
-flotante
+.flotante
 {
   float: right
 }
 
 
-miclase negrita
+.miclase
 {
 
 }
 
-:menu li
+.menu li
 {
   color: red
 }

@@ -18,7 +18,6 @@ namespace Multiformulario
         List<CsFactDetall> listaLinFact = new List<CsFactDetall>();
         List<CsClientes> listaClientes = new List<CsClientes>();
         List<CsProductos> listaProductos = new List<CsProductos>();
-        List<CsFactDetall> nulistaLinFact = new List<CsFactDetall>();
 
         int Idfact;
         int lin;
@@ -34,10 +33,8 @@ namespace Multiformulario
         private TabControl tabControl1;
         private TabPage tabpEncabezado;
         private SplitContainer splitContainer1;
-        private DataGridView dgv_Facturas;
         private TextBox tbEncabezadoFactura;
         private Label label5;
-        private ErrorProvider errorProvider1;
         private IContainer components;
         private TabPage tabDesgloses;
         private SplitContainer splitContainer3;
@@ -46,7 +43,7 @@ namespace Multiformulario
         private TextBox txt_Total;
         private TextBox txt_Iva;
         private TextBox txt_BaseImp;
-        private TextBox textBox2;
+        private TextBox txt_usuarioSel;
         private TextBox txt_idfac_desg;
         private Label lblTotalFactura;
         private Label lblIVAFact;
@@ -58,10 +55,9 @@ namespace Multiformulario
         private Label label4;
         private TextBox txt_LIVA;
         private Label label3;
-        private Button button1;
+        private Button btn_modificar;
         private TextBox txt_LBaseImp;
         private Label lblBaseImpLinea;
-        private Button tsb_buscar;
         private Label label2;
         private NumericUpDown nud_Cantidad;
         private ComboBox cmb_IdProducto;
@@ -69,10 +65,12 @@ namespace Multiformulario
         private TextBox txt_LinSel;
         private Label lblLinSel;
         private DataGridView dgv_LinFact;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem buscarToolStripMenuItem;
-        private ToolStripMenuItem borrarFacturaToolStripMenuItem;
-        private ToolStripMenuItem cerrarYGuardarToolStripMenuItem;
+        private DataGridView dgv_Facturas;
+        private ToolStrip toolStrip1;
+        private ToolStripButton tsb_BuscarFactura;
+        private ToolStripButton tsb_BorrarFactura;
+        private ToolStripButton tsb_CerrarFactura;
+        private Button btnBuscar;
         double Total = 0;
 
         public FrmCartera()
@@ -129,241 +127,202 @@ namespace Multiformulario
             cmb_IdProducto.SelectedValue = "0";
             cmb_IdCliente.SelectedValue = "0";
         }
-       
-        private void tsb_borrar_Click(object sender, EventArgs e)
-        {
-            if (!ValidarID()) return;
-            DialogResult rta = MessageBox.Show(this, "¿Está seguro de borrar el Factura?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-            if (rta == DialogResult.No) return;
-            
-            if (GetFactura(Convert.ToInt32(txt_idfac_desg.Text)) == null)
-            {
-                errorProvider1.SetError(txt_idfac_desg, "Factura no existe");
-                txt_idfac_desg.Focus();
-                return;
-            }
-            foreach (CsFactDetall miLinea in listaLinFact)
-            {
-                if (miLinea.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
-                {
-                    //DialogResult rta = MessageBox.Show(this, "¿Está seguro de borrar el Factura?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
-                    listaLinFact.Remove(miLinea);
-                    break;         
-                }
-             }
-             foreach (CsFacturas miFactura in listaFacturas)
-             {
-                    if (miFactura.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
-                    {
-                        listaFacturas.Remove(miFactura);
-                        break;
-                    }   
-             }
-            dgv_Facturas.DataSource = null;
-            dgv_Facturas.DataSource = listaFacturas;
-        }
-        
-        private bool ValidarID()
-        {
-            {
-                if (txt_idfac_desg.Text == "")
-                {
-                    errorProvider1.SetError(txt_idfac_desg, "Introduce un ID");
-                    txt_idfac_desg.Focus();
-                    return false;
-                }
-                errorProvider1.SetError(txt_idfac_desg, "");
-                return true;
-            }
-        }
 
-        private bool ValidarLinea()
-        {
-            {
-                if (txt_LinSel.Text == "")
-                {
-                    errorProvider1.SetError(txt_LinSel, "Introduce la linea que deseas modificar");
-                    txt_LinSel.Focus();
-                    return false;
-                }
-                errorProvider1.SetError(txt_LinSel, "");
-                return true;
-            }
-        }
+        //private void tsb_borrar_Click(object sender, EventArgs e)
+        //{
+        //    if (!ValidarID()) return;
+        //    DialogResult rta = MessageBox.Show(this, "¿Está seguro de borrar el Factura?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+        //    if (rta == DialogResult.No) return;
 
-        private CsFacturas GetFactura(int IdFactura)
-        {
-            foreach (CsFacturas miFactura in listaFacturas)
-            {
-                if (miFactura.IdFactura == IdFactura) return miFactura;
-            }
-            return null;
-        }
+        //    if (GetFactura(Convert.ToInt32(txt_idfac_desg.Text)) == null)
+        //    {
+        //        errorProvider1.SetError(txt_idfac_desg, "Factura no existe");
+        //        txt_idfac_desg.Focus();
+        //        return;
+        //    }
+        //    foreach (CsFactDetall miLinea in listaLinFact)
+        //    {
+        //        if (miLinea.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
+        //        {
+        //            //DialogResult rta = MessageBox.Show(this, "¿Está seguro de borrar el Factura?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+        //            listaLinFact.Remove(miLinea);
+        //            break;
+        //        }
+        //    }
+        //    foreach (CsFacturas miFactura in listaFacturas)
+        //    {
+        //        if (miFactura.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
+        //        {
+        //            listaFacturas.Remove(miFactura);
+        //            break;
+        //        }
+        //    }
+        //    dgv_Facturas.DataSource = null;
+        //    dgv_Facturas.DataSource = listaFacturas;
+        //}
 
-        private CsFactDetall GetLineaFactura(int Linea)
-        {
-            foreach (CsFactDetall miLinea in nulistaLinFact)
-            {
-                if (miLinea.Linea == Linea) return miLinea;
-            }
-            return null;
-        }
+        //private bool ValidarID()
+        //{
+        //    {
+        //        if (txt_idfac_desg.Text == "")
+        //        {
+        //            errorProvider1.SetError(txt_idfac_desg, "Introduce un ID");
+        //            txt_idfac_desg.Focus();
+        //            return false;
+        //        }
+        //        errorProvider1.SetError(txt_idfac_desg, "");
+        //        return true;
+        //    }
+        //}
 
-        private CsProductos GetProducto(int IdProducto)
-        {
-            foreach (CsProductos miProducto in listaProductos)
-            {
-                if (miProducto.IdProducto == IdProducto) return miProducto;
-            }
-            return null;
-        }
+        //private bool ValidarLinea()
+        //{
+        //    {
+        //        if (txt_LinSel.Text == "")
+        //        {
+        //            errorProvider1.SetError(txt_LinSel, "Introduce la linea que deseas modificar");
+        //            txt_LinSel.Focus();
+        //            return false;
+        //        }
+        //        errorProvider1.SetError(txt_LinSel, "");
+        //        return true;
+        //    }
+        //}
 
-        private void tsb_buscar_Click(object sender, EventArgs e)
-        {
-            txt_idfac_desg.Text = txt_idfac_desg.Text;
-            CsFacturas miFactura = GetFactura(Convert.ToInt32(txt_idfac_desg.Text));
-            if (miFactura == null)
-            {
-                errorProvider1.SetError(txt_idfac_desg, "El Factura no existe");
-                txt_idfac_desg.Focus();
-                return;
-            }
-            errorProvider1.SetError(txt_idfac_desg, "");
-            cmb_IdCliente.SelectedValue = miFactura.IdCliente;
-            txt_BaseImp.Text = Convert.ToString(miFactura.BaseImponible);
-            txt_Iva.Text = Convert.ToString(miFactura.Iva);
-            txt_Total.Text = Convert.ToString(miFactura.TotalFactura);
-            Filtra_desgfact();
-            dgv_LinFact.DataSource = null;
-            dgv_LinFact.DataSource = nulistaLinFact;
-            this.tabControl1.SelectedTab = tabDesgloses;
-            
-        }
-        
-        private void Filtra_desgfact()
-        {
-            foreach (CsFactDetall miLinea in listaLinFact)                
-            {
-                if  (miLinea.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
-                {
-                    MessageBox.Show("Hola");
-                    nulistaLinFact.Add(miLinea);           
-                }
-            }
-        }
+        //private CsFacturas GetFactura(int IdFactura)
+        //{
+        //    foreach (CsFacturas miFactura in listaFacturas)
+        //    {
+        //        if (miFactura.IdFactura == IdFactura) return miFactura;
+        //    }
+        //    return null;
+        //}
 
-        private void btn_buscar_Click(object sender, EventArgs e)
-        {
-            if (!ValidarLinea()) return;
-            CsFactDetall miLinea = GetLineaFactura(Convert.ToInt32(txt_LinSel.Text));
-            if (miLinea == null)
-            {
-                errorProvider1.SetError(txt_LinSel, "No existe esta línea");
-                txt_LinSel.Focus();
-                return;
-            }
-            errorProvider1.SetError(txt_LinSel, "");
-            cmb_IdProducto.SelectedValue = miLinea.IdProducto;
-            nud_Cantidad.Value = miLinea.Cantidad;
-            calcular_Parciales();
-        }
+        //private CsFactDetall GetLineaFactura(int Linea)
+        //{
+        //    foreach (CsFactDetall miLinea in nulistaLinFact)
+        //    {
+        //        if (miLinea.Linea == Linea) return miLinea;
+        //    }
+        //    return null;
+        //}
 
-        private void tsb_modFact_Click(object sender, EventArgs e)
-        {
-            if (!ValidarLinea()) return;
-            CsFactDetall miLinea = GetLineaFactura(Convert.ToInt32(txt_LinSel.Text));
-            if (miLinea == null)
-            {
-                errorProvider1.SetError(txt_LinSel, "No existe esta línea");
-                txt_LinSel.Focus();
-                return;
-            }
-            errorProvider1.SetError(txt_LinSel, "");
-            cmb_IdProducto.SelectedValue = miLinea.IdProducto;
-            nud_Cantidad.Value = miLinea.Cantidad;
-        }
+        //private CsProductos GetProducto(int IdProducto)
+        //{
+        //    foreach (CsProductos miProducto in listaProductos)
+        //    {
+        //        if (miProducto.IdProducto == IdProducto) return miProducto;
+        //    }
+        //    return null;
+        //}
 
-        private void calcular_Parciales()
-        {
-            CsFactDetall miLinDetallini = new CsFactDetall();
-            Idfact = Convert.ToInt32(txt_idfac_desg.Text);
-            lin = Convert.ToInt32(txt_LinSel.Text);
-            if (cmb_IdProducto.SelectedIndex > 0)
-            {
-                idprod = (int)cmb_IdProducto.SelectedValue;
-            }
-            else
-            { idprod = 0; }
-            cntd_calc = Convert.ToInt32(nud_Cantidad.Value);
-            prcalc = Convert.ToDouble(GetProducto(idprod).Precio) * cntd_calc;
-            nomprod = (GetProducto(idprod).NombreProducto);
-            ivalin = prcalc * 0.21;
-            totlin = prcalc + ivalin;
-            txt_LBaseImp.Text = Convert.ToString(prcalc);
-            txt_LIVA.Text = Convert.ToString(ivalin);
-            txt_LTotal.Text = Convert.ToString(totlin);
-        }
+        //private void tsb_buscar_Click(object sender, EventArgs e)
+        //{
+        //    txt_idfac_desg.Text = txt_idfac_desg.Text;
+        //    CsFacturas miFactura = GetFactura(Convert.ToInt32(txt_idfac_desg.Text));
+        //    if (miFactura == null)
+        //    {
+        //        errorProvider1.SetError(txt_idfac_desg, "El Factura no existe");
+        //        txt_idfac_desg.Focus();
+        //        return;
+        //    }
+        //    errorProvider1.SetError(txt_idfac_desg, "");
+        //    cmb_IdCliente.SelectedValue = miFactura.IdCliente;
+        //    txt_BaseImp.Text = Convert.ToString(miFactura.BaseImponible);
+        //    txt_Iva.Text = Convert.ToString(miFactura.Iva);
+        //    txt_Total.Text = Convert.ToString(miFactura.TotalFactura);
+        //    Filtra_desgfact();
+        //    dgv_LinFact.DataSource = null;
+        //    dgv_LinFact.DataSource = nulistaLinFact;
+        //    this.tabControl1.SelectedTab = tabDesgloses;
 
-        private void cmb_IdProducto_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            calcular_Parciales();
-        }
+        //}
 
-        private void nud_Cantidad_ValueChanged(object sender, EventArgs e)
-        {
-            calcular_Parciales();
-        }
+        //private void Filtra_desgfact()
+        //{
+        //    foreach (CsFactDetall miLinea in listaLinFact)
+        //    {
+        //        if (miLinea.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
+        //        {
+        //            MessageBox.Show("Hola");
+        //            nulistaLinFact.Add(miLinea);
+        //        }
+        //    }
+        //}
 
-        
+        //private void btn_buscar_Click(object sender, EventArgs e)
+        //{
+        //    if (!ValidarLinea()) return;
+        //    CsFactDetall miLinea = GetLineaFactura(Convert.ToInt32(txt_LinSel.Text));
+        //    if (miLinea == null)
+        //    {
+        //        errorProvider1.SetError(txt_LinSel, "No existe esta línea");
+        //        txt_LinSel.Focus();
+        //        return;
+        //    }
+        //    errorProvider1.SetError(txt_LinSel, "");
+        //    cmb_IdProducto.SelectedValue = miLinea.IdProducto;
+        //    nud_Cantidad.Value = miLinea.Cantidad;
+        //    calcular_Parciales();
+        //}
 
-        private void btn_modificar_Click(object sender, EventArgs e)
-        {
-            if (!ValidarLinea()) return;
-            Borra_linea();
-        }
+        //private void tsb_modFact_Click(object sender, EventArgs e)
+        //{
+        //    if (!ValidarLinea()) return;
+        //    CsFactDetall miLinea = GetLineaFactura(Convert.ToInt32(txt_LinSel.Text));
+        //    if (miLinea == null)
+        //    {
+        //        errorProvider1.SetError(txt_LinSel, "No existe esta línea");
+        //        txt_LinSel.Focus();
+        //        return;
+        //    }
+        //    errorProvider1.SetError(txt_LinSel, "");
+        //    cmb_IdProducto.SelectedValue = miLinea.IdProducto;
+        //    nud_Cantidad.Value = miLinea.Cantidad;
+        //}
 
-        private void Borra_linea()
-        {
-            
-            foreach (CsFactDetall miLinea in nulistaLinFact)
-            {
-                if (miLinea.Linea == Convert.ToInt32(txt_LinSel.Text))
-                {
-                    MessageBox.Show("En fact nudetall");
-                    nulistaLinFact.Remove(miLinea);
-                    break;
-                }
-            }
-            foreach (CsFactDetall miLinea in listaLinFact)
-            {
-                if (miLinea.Linea == Convert.ToInt32(txt_LinSel.Text) && miLinea.IdFactura == Convert.ToInt32(txt_idfac_desg.Text))
-                {
-                    MessageBox.Show("En fact detall");
-                    listaLinFact.Remove(miLinea);
-                    break;
-                }
-            }
-            dgv_LinFact.DataSource = null;
-            dgv_LinFact.DataSource = nulistaLinFact;
-        }
+        //private void calcular_Parciales()
+        //{
+        //    CsFactDetall miLinDetallini = new CsFactDetall();
+        //    Idfact = Convert.ToInt32(txt_idfac_desg.Text);
+        //    lin = Convert.ToInt32(txt_LinSel.Text);
+        //    if (cmb_IdProducto.SelectedIndex > 0)
+        //    {
+        //        idprod = (int)cmb_IdProducto.SelectedValue;
+        //    }
+        //    else
+        //    { idprod = 0; }
+        //    cntd_calc = Convert.ToInt32(nud_Cantidad.Value);
+        //    prcalc = Convert.ToDouble(GetProducto(idprod).Precio) * cntd_calc;
+        //    nomprod = (GetProducto(idprod).NombreProducto);
+        //    ivalin = prcalc * 0.21;
+        //    totlin = prcalc + ivalin;
+        //    txt_LBaseImp.Text = Convert.ToString(prcalc);
+        //    txt_LIVA.Text = Convert.ToString(ivalin);
+        //    txt_LTotal.Text = Convert.ToString(totlin);
+        ////}
 
-        private void Guardar_Factura()
-        {
-            XmlSerializer serializador = new XmlSerializer(typeof(List<CsFacturas>));
-            TextWriter escritor = new StreamWriter("Facturas.xml");
-            serializador.Serialize(escritor, listaFacturas);
-            escritor.Close();
-        }
+        //private void cmb_IdProducto_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    calcular_Parciales();
+        //}
 
-        private void tsb_GuardarCerrar_Click(object sender, EventArgs e)
-        {
-            Guardar_Factura();
+        //private void nud_Cantidad_ValueChanged(object sender, EventArgs e)
+        //{
+        //    calcular_Parciales();
+        //}
 
-        }
+
+
+        //private void btn_modificar_Click(object sender, EventArgs e)
+        //{
+        //    if (!ValidarLinea()) return;
+        //    Borra_linea();
+        //}
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCartera));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabpEncabezado = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -377,7 +336,7 @@ namespace Multiformulario
             this.txt_Total = new System.Windows.Forms.TextBox();
             this.txt_Iva = new System.Windows.Forms.TextBox();
             this.txt_BaseImp = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_usuarioSel = new System.Windows.Forms.TextBox();
             this.txt_idfac_desg = new System.Windows.Forms.TextBox();
             this.lblTotalFactura = new System.Windows.Forms.Label();
             this.lblIVAFact = new System.Windows.Forms.Label();
@@ -385,14 +344,14 @@ namespace Multiformulario
             this.lblIDCli = new System.Windows.Forms.Label();
             this.lblUsuSel = new System.Windows.Forms.Label();
             this.lblFactSel = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.txt_LTotal = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_LIVA = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_modificar = new System.Windows.Forms.Button();
             this.txt_LBaseImp = new System.Windows.Forms.TextBox();
             this.lblBaseImpLinea = new System.Windows.Forms.Label();
-            this.tsb_buscar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.nud_Cantidad = new System.Windows.Forms.NumericUpDown();
             this.cmb_IdProducto = new System.Windows.Forms.ComboBox();
@@ -400,11 +359,10 @@ namespace Multiformulario
             this.txt_LinSel = new System.Windows.Forms.TextBox();
             this.lblLinSel = new System.Windows.Forms.Label();
             this.dgv_LinFact = new System.Windows.Forms.DataGridView();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.borrarFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarYGuardarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsb_BuscarFactura = new System.Windows.Forms.ToolStripButton();
+            this.tsb_BorrarFactura = new System.Windows.Forms.ToolStripButton();
+            this.tsb_CerrarFactura = new System.Windows.Forms.ToolStripButton();
             this.tabControl1.SuspendLayout();
             this.tabpEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -423,19 +381,20 @@ namespace Multiformulario
             this.splitContainer4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LinFact)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabpEncabezado);
             this.tabControl1.Controls.Add(this.tabDesgloses);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 24);
+            this.tabControl1.Location = new System.Drawing.Point(0, 28);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(798, 460);
+            this.tabControl1.Size = new System.Drawing.Size(798, 456);
             this.tabControl1.TabIndex = 0;
             // 
             // tabpEncabezado
@@ -444,7 +403,7 @@ namespace Multiformulario
             this.tabpEncabezado.Location = new System.Drawing.Point(4, 22);
             this.tabpEncabezado.Name = "tabpEncabezado";
             this.tabpEncabezado.Padding = new System.Windows.Forms.Padding(3);
-            this.tabpEncabezado.Size = new System.Drawing.Size(790, 434);
+            this.tabpEncabezado.Size = new System.Drawing.Size(790, 430);
             this.tabpEncabezado.TabIndex = 1;
             this.tabpEncabezado.Text = "Encabezado";
             this.tabpEncabezado.UseVisualStyleBackColor = true;
@@ -464,8 +423,8 @@ namespace Multiformulario
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.dgv_Facturas);
-            this.splitContainer1.Size = new System.Drawing.Size(784, 428);
-            this.splitContainer1.SplitterDistance = 144;
+            this.splitContainer1.Size = new System.Drawing.Size(784, 424);
+            this.splitContainer1.SplitterDistance = 157;
             this.splitContainer1.TabIndex = 0;
             // 
             // tbEncabezadoFactura
@@ -474,7 +433,6 @@ namespace Multiformulario
             this.tbEncabezadoFactura.Name = "tbEncabezadoFactura";
             this.tbEncabezadoFactura.Size = new System.Drawing.Size(100, 20);
             this.tbEncabezadoFactura.TabIndex = 1;
-            this.tbEncabezadoFactura.TextChanged += new System.EventHandler(this.tbEncabezadoFactura_TextChanged);
             // 
             // label5
             // 
@@ -491,8 +449,9 @@ namespace Multiformulario
             this.dgv_Facturas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_Facturas.Location = new System.Drawing.Point(0, 0);
             this.dgv_Facturas.Name = "dgv_Facturas";
-            this.dgv_Facturas.Size = new System.Drawing.Size(784, 280);
+            this.dgv_Facturas.Size = new System.Drawing.Size(784, 263);
             this.dgv_Facturas.TabIndex = 0;
+            this.dgv_Facturas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Facturas_CellClick);
             // 
             // tabDesgloses
             // 
@@ -500,7 +459,7 @@ namespace Multiformulario
             this.tabDesgloses.Location = new System.Drawing.Point(4, 22);
             this.tabDesgloses.Name = "tabDesgloses";
             this.tabDesgloses.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDesgloses.Size = new System.Drawing.Size(790, 434);
+            this.tabDesgloses.Size = new System.Drawing.Size(790, 430);
             this.tabDesgloses.TabIndex = 2;
             this.tabDesgloses.Text = "Desgloses";
             this.tabDesgloses.UseVisualStyleBackColor = true;
@@ -519,8 +478,8 @@ namespace Multiformulario
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dgv_LinFact);
-            this.splitContainer3.Size = new System.Drawing.Size(784, 428);
-            this.splitContainer3.SplitterDistance = 150;
+            this.splitContainer3.Size = new System.Drawing.Size(784, 424);
+            this.splitContainer3.SplitterDistance = 162;
             this.splitContainer3.TabIndex = 0;
             // 
             // splitContainer4
@@ -536,7 +495,7 @@ namespace Multiformulario
             this.splitContainer4.Panel1.Controls.Add(this.txt_Total);
             this.splitContainer4.Panel1.Controls.Add(this.txt_Iva);
             this.splitContainer4.Panel1.Controls.Add(this.txt_BaseImp);
-            this.splitContainer4.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer4.Panel1.Controls.Add(this.txt_usuarioSel);
             this.splitContainer4.Panel1.Controls.Add(this.txt_idfac_desg);
             this.splitContainer4.Panel1.Controls.Add(this.lblTotalFactura);
             this.splitContainer4.Panel1.Controls.Add(this.lblIVAFact);
@@ -547,22 +506,22 @@ namespace Multiformulario
             // 
             // splitContainer4.Panel2
             // 
+            this.splitContainer4.Panel2.Controls.Add(this.btnBuscar);
             this.splitContainer4.Panel2.Controls.Add(this.txt_LTotal);
             this.splitContainer4.Panel2.Controls.Add(this.label4);
             this.splitContainer4.Panel2.Controls.Add(this.txt_LIVA);
             this.splitContainer4.Panel2.Controls.Add(this.label3);
-            this.splitContainer4.Panel2.Controls.Add(this.button1);
+            this.splitContainer4.Panel2.Controls.Add(this.btn_modificar);
             this.splitContainer4.Panel2.Controls.Add(this.txt_LBaseImp);
             this.splitContainer4.Panel2.Controls.Add(this.lblBaseImpLinea);
-            this.splitContainer4.Panel2.Controls.Add(this.tsb_buscar);
             this.splitContainer4.Panel2.Controls.Add(this.label2);
             this.splitContainer4.Panel2.Controls.Add(this.nud_Cantidad);
             this.splitContainer4.Panel2.Controls.Add(this.cmb_IdProducto);
             this.splitContainer4.Panel2.Controls.Add(this.label1);
             this.splitContainer4.Panel2.Controls.Add(this.txt_LinSel);
             this.splitContainer4.Panel2.Controls.Add(this.lblLinSel);
-            this.splitContainer4.Size = new System.Drawing.Size(784, 150);
-            this.splitContainer4.SplitterDistance = 76;
+            this.splitContainer4.Size = new System.Drawing.Size(784, 162);
+            this.splitContainer4.SplitterDistance = 92;
             this.splitContainer4.TabIndex = 0;
             // 
             // cmb_IdCliente
@@ -580,6 +539,7 @@ namespace Multiformulario
             this.txt_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Total.Location = new System.Drawing.Point(663, 33);
             this.txt_Total.Name = "txt_Total";
+            this.txt_Total.ReadOnly = true;
             this.txt_Total.Size = new System.Drawing.Size(100, 20);
             this.txt_Total.TabIndex = 10;
             // 
@@ -588,6 +548,7 @@ namespace Multiformulario
             this.txt_Iva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_Iva.Location = new System.Drawing.Point(583, 33);
             this.txt_Iva.Name = "txt_Iva";
+            this.txt_Iva.ReadOnly = true;
             this.txt_Iva.Size = new System.Drawing.Size(74, 20);
             this.txt_Iva.TabIndex = 9;
             // 
@@ -596,20 +557,23 @@ namespace Multiformulario
             this.txt_BaseImp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_BaseImp.Location = new System.Drawing.Point(493, 33);
             this.txt_BaseImp.Name = "txt_BaseImp";
+            this.txt_BaseImp.ReadOnly = true;
             this.txt_BaseImp.Size = new System.Drawing.Size(84, 20);
             this.txt_BaseImp.TabIndex = 8;
             // 
-            // textBox2
+            // txt_usuarioSel
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 7;
+            this.txt_usuarioSel.Location = new System.Drawing.Point(129, 33);
+            this.txt_usuarioSel.Name = "txt_usuarioSel";
+            this.txt_usuarioSel.ReadOnly = true;
+            this.txt_usuarioSel.Size = new System.Drawing.Size(100, 20);
+            this.txt_usuarioSel.TabIndex = 7;
             // 
             // txt_idfac_desg
             // 
             this.txt_idfac_desg.Location = new System.Drawing.Point(23, 33);
             this.txt_idfac_desg.Name = "txt_idfac_desg";
+            this.txt_idfac_desg.ReadOnly = true;
             this.txt_idfac_desg.Size = new System.Drawing.Size(100, 20);
             this.txt_idfac_desg.TabIndex = 6;
             // 
@@ -670,11 +634,22 @@ namespace Multiformulario
             this.lblFactSel.TabIndex = 0;
             this.lblFactSel.Text = "Fact. Sel.";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(110, 3);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(61, 60);
+            this.btnBuscar.TabIndex = 20;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // txt_LTotal
             // 
             this.txt_LTotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_LTotal.Location = new System.Drawing.Point(663, 29);
+            this.txt_LTotal.Location = new System.Drawing.Point(663, 30);
             this.txt_LTotal.Name = "txt_LTotal";
+            this.txt_LTotal.ReadOnly = true;
             this.txt_LTotal.Size = new System.Drawing.Size(100, 20);
             this.txt_LTotal.TabIndex = 19;
             // 
@@ -693,6 +668,7 @@ namespace Multiformulario
             this.txt_LIVA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_LIVA.Location = new System.Drawing.Point(583, 29);
             this.txt_LIVA.Name = "txt_LIVA";
+            this.txt_LIVA.ReadOnly = true;
             this.txt_LIVA.Size = new System.Drawing.Size(74, 20);
             this.txt_LIVA.TabIndex = 17;
             // 
@@ -706,21 +682,23 @@ namespace Multiformulario
             this.label3.TabIndex = 16;
             this.label3.Text = "IVA";
             // 
-            // button1
+            // btn_modificar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(416, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 66);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_modificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_modificar.Location = new System.Drawing.Point(416, 3);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(71, 61);
+            this.btn_modificar.TabIndex = 13;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.UseVisualStyleBackColor = true;
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // txt_LBaseImp
             // 
             this.txt_LBaseImp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txt_LBaseImp.Location = new System.Drawing.Point(493, 29);
             this.txt_LBaseImp.Name = "txt_LBaseImp";
+            this.txt_LBaseImp.ReadOnly = true;
             this.txt_LBaseImp.Size = new System.Drawing.Size(84, 20);
             this.txt_LBaseImp.TabIndex = 15;
             // 
@@ -733,15 +711,6 @@ namespace Multiformulario
             this.lblBaseImpLinea.Size = new System.Drawing.Size(54, 13);
             this.lblBaseImpLinea.TabIndex = 14;
             this.lblBaseImpLinea.Text = "Base Imp.";
-            // 
-            // tsb_buscar
-            // 
-            this.tsb_buscar.Location = new System.Drawing.Point(110, 3);
-            this.tsb_buscar.Name = "tsb_buscar";
-            this.tsb_buscar.Size = new System.Drawing.Size(77, 66);
-            this.tsb_buscar.TabIndex = 8;
-            this.tsb_buscar.Text = "Buscar";
-            this.tsb_buscar.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -760,16 +729,15 @@ namespace Multiformulario
             this.nud_Cantidad.Name = "nud_Cantidad";
             this.nud_Cantidad.Size = new System.Drawing.Size(66, 20);
             this.nud_Cantidad.TabIndex = 11;
+            this.nud_Cantidad.ValueChanged += new System.EventHandler(this.nud_Cantidad_ValueChanged);
             // 
             // cmb_IdProducto
             // 
-            this.cmb_IdProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmb_IdProducto.FormattingEnabled = true;
-            this.cmb_IdProducto.Location = new System.Drawing.Point(194, 30);
+            this.cmb_IdProducto.Location = new System.Drawing.Point(193, 29);
             this.cmb_IdProducto.Name = "cmb_IdProducto";
-            this.cmb_IdProducto.Size = new System.Drawing.Size(144, 21);
-            this.cmb_IdProducto.TabIndex = 10;
+            this.cmb_IdProducto.Size = new System.Drawing.Size(121, 21);
+            this.cmb_IdProducto.TabIndex = 21;
+            this.cmb_IdProducto.SelectionChangeCommitted += new System.EventHandler(this.cmb_IdProducto_SelectionChangeCommitted_1);
             // 
             // label1
             // 
@@ -802,50 +770,58 @@ namespace Multiformulario
             this.dgv_LinFact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_LinFact.Location = new System.Drawing.Point(0, 0);
             this.dgv_LinFact.Name = "dgv_LinFact";
-            this.dgv_LinFact.Size = new System.Drawing.Size(784, 274);
+            this.dgv_LinFact.ReadOnly = true;
+            this.dgv_LinFact.Size = new System.Drawing.Size(784, 258);
             this.dgv_LinFact.TabIndex = 0;
+            this.dgv_LinFact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_LinFact_CellClick);
             // 
-            // errorProvider1
+            // toolStrip1
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsb_BuscarFactura,
+            this.tsb_BorrarFactura,
+            this.tsb_CerrarFactura});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(798, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "toolStrip1";
             // 
-            // menuStrip1
+            // tsb_BuscarFactura
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.buscarToolStripMenuItem,
-            this.borrarFacturaToolStripMenuItem,
-            this.cerrarYGuardarToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(798, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.tsb_BuscarFactura.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsb_BuscarFactura.Image = ((System.Drawing.Image)(resources.GetObject("tsb_BuscarFactura.Image")));
+            this.tsb_BuscarFactura.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_BuscarFactura.Name = "tsb_BuscarFactura";
+            this.tsb_BuscarFactura.Size = new System.Drawing.Size(88, 22);
+            this.tsb_BuscarFactura.Text = "Buscar Factura";
+            this.tsb_BuscarFactura.Click += new System.EventHandler(this.tsb_BuscarFactura_Click);
             // 
-            // buscarToolStripMenuItem
+            // tsb_BorrarFactura
             // 
-            this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.buscarToolStripMenuItem.Text = "Buscar Factura";
-            this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
+            this.tsb_BorrarFactura.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsb_BorrarFactura.Image = ((System.Drawing.Image)(resources.GetObject("tsb_BorrarFactura.Image")));
+            this.tsb_BorrarFactura.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_BorrarFactura.Name = "tsb_BorrarFactura";
+            this.tsb_BorrarFactura.Size = new System.Drawing.Size(85, 22);
+            this.tsb_BorrarFactura.Text = "Borrar Factura";
+            this.tsb_BorrarFactura.Click += new System.EventHandler(this.tsb_BorrarFactura_Click);
             // 
-            // borrarFacturaToolStripMenuItem
+            // tsb_CerrarFactura
             // 
-            this.borrarFacturaToolStripMenuItem.Name = "borrarFacturaToolStripMenuItem";
-            this.borrarFacturaToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
-            this.borrarFacturaToolStripMenuItem.Text = "Borrar Factura";
-            // 
-            // cerrarYGuardarToolStripMenuItem
-            // 
-            this.cerrarYGuardarToolStripMenuItem.Name = "cerrarYGuardarToolStripMenuItem";
-            this.cerrarYGuardarToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
-            this.cerrarYGuardarToolStripMenuItem.Text = "Cerrar y Guardar";
+            this.tsb_CerrarFactura.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.tsb_CerrarFactura.Image = ((System.Drawing.Image)(resources.GetObject("tsb_CerrarFactura.Image")));
+            this.tsb_CerrarFactura.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_CerrarFactura.Name = "tsb_CerrarFactura";
+            this.tsb_CerrarFactura.Size = new System.Drawing.Size(85, 22);
+            this.tsb_CerrarFactura.Text = "Cerrar Factura";
+            this.tsb_CerrarFactura.Click += new System.EventHandler(this.tsb_CerrarFactura_Click);
             // 
             // FrmCartera
             // 
             this.ClientSize = new System.Drawing.Size(798, 484);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmCartera";
             this.Load += new System.EventHandler(this.FrmCartera_Load);
             this.tabControl1.ResumeLayout(false);
@@ -869,23 +845,249 @@ namespace Multiformulario
             this.splitContainer4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_LinFact)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+        
 
-        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void dgv_Facturas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int indice = dgv_Facturas.CurrentCell.RowIndex;
+            int numFactura = int.Parse(dgv_Facturas["IdFactura", indice].Value.ToString().Trim());
+            tbEncabezadoFactura.Text = numFactura.ToString();
+        }
+        
 
+        private void dgv_LinFact_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int indice = dgv_LinFact.CurrentCell.RowIndex;
+            int numLinea = int.Parse(dgv_LinFact["Linea", indice].Value.ToString().Trim());
+            txt_LinSel.Text = numLinea.ToString();
+        }
+        
+
+        public void actualizarFacturas()
+        {
+            foreach (CsFacturas factura in listaFacturas)
+            {
+                factura.BaseImponible = 0;
+                factura.Iva = 0;
+                factura.TotalFactura = 0;
+                foreach (CsFactDetall facturalinea in listaLinFact)
+                {
+                    if (factura.IdFactura == facturalinea.IdFactura)
+                    {
+                        factura.BaseImponible += facturalinea.Importe;
+                        factura.Iva += facturalinea.Iva;
+                        factura.TotalFactura += facturalinea.TotalLinea;
+                    }
+                }
+            }
         }
 
-        private void tbEncabezadoFactura_TextChanged(object sender, EventArgs e)
-        {
 
+        public void actualizarLineas()
+        {
+            selectFactura(int.Parse(tbEncabezadoFactura.Text));
+        }
+        
+
+        private void tsb_BuscarFactura_Click(object sender, EventArgs e)
+        {
+            int numFactura = int.Parse(tbEncabezadoFactura.Text);
+            selectFactura(numFactura);
+        }
+
+        private void selectFactura(int idFactura)
+        {
+            CsFacturas subFactura = new CsFacturas();
+            foreach (CsFacturas factura in listaFacturas)
+            {
+                if (factura.IdFactura == idFactura)
+                {
+                    subFactura = factura;
+                    break;
+                }
+            }
+
+            List<CsFactDetall> subListaLinFact = new List<CsFactDetall>();
+            foreach (CsFactDetall linFactura in listaLinFact)
+            {
+                if (linFactura.IdFactura == idFactura)
+                {
+                    subListaLinFact.Add(linFactura);
+                }
+            }
+            dgv_LinFact.DataSource = subListaLinFact;
+            dgv_LinFact.Refresh();
+
+            txt_idfac_desg.Text = subFactura.IdFactura.ToString();
+            txt_usuarioSel.Text = subFactura.IdUsuario.ToString();
+            cmb_IdCliente.DataSource = listaClientes;
+            cmb_IdCliente.SelectedValue = subFactura.IdCliente;
+            txt_BaseImp.Text = subFactura.BaseImponible.ToString();
+            txt_Iva.Text = subFactura.Iva.ToString();
+            txt_Total.Text = subFactura.TotalFactura.ToString();
+        }
+
+        private void tsb_BorrarFactura_Click(object sender, EventArgs e)
+        {
+            Borra_facturaylineas();
+        }
+
+        private void Borra_facturaylineas()
+        {
+            bool found = false;
+            CsFactDetall mifacturalin = new CsFactDetall();
+            foreach (CsFactDetall linFactura in listaLinFact)
+            {
+                if (linFactura.Linea == int.Parse(txt_LinSel.Text))
+                {
+                    found = true;
+                    mifacturalin = linFactura;
+                }
+            }
+            if (found)
+            {
+                listaLinFact.Remove(mifacturalin);
+                MessageBox.Show("Lineas Borradas");
+            }
+            found = false;
+            CsFacturas mifactura = new CsFacturas();
+            foreach (CsFacturas factura in listaFacturas)
+            {
+                if (factura.IdFactura == int.Parse(tbEncabezadoFactura.Text))
+                {
+                    found = true;
+                    mifactura = factura;
+                }
+            }
+            if (found)
+            {
+                listaFacturas.Remove(mifactura);
+                MessageBox.Show("Factura Borrada");
+            }
+            actualizarLineas();
+            actualizarFacturas();
+        }
+
+
+        private void tsb_CerrarFactura_Click(object sender, EventArgs e)
+        {
+            Guardar_Factura();
+            this.Close();
+        }
+
+        private void Guardar_Factura()
+        {
+            XmlSerializer serializador = new XmlSerializer(typeof(List<CsFacturas>));
+            TextWriter escritor = new StreamWriter("Facturas.xml");
+            serializador.Serialize(escritor, listaFacturas);
+            escritor.Close();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CsFactDetall subLinea = new CsFactDetall();
+            foreach (CsFactDetall lineaFactura in listaLinFact)
+            {
+                if (lineaFactura.Linea.ToString() == txt_LinSel.Text)
+                {
+                    subLinea = lineaFactura;
+                    break;
+                }
+            }
+            cmb_IdProducto.DataSource = listaProductos;
+            cmb_IdProducto.SelectedValue = subLinea.IdProducto;
+            nud_Cantidad.Value = subLinea.Cantidad;
+            txt_LBaseImp.Text = subLinea.Importe.ToString();
+            txt_LIVA.Text = subLinea.Iva.ToString();
+            txt_LTotal.Text = subLinea.TotalLinea.ToString();
+
+            actualizarPrecios();
+        }
+
+
+        private void cmb_IdProducto_SelectionChangeCommitted_1(object sender, EventArgs e)
+        {
+            actualizarPrecios();
+        }
+
+        private void nud_Cantidad_ValueChanged(object sender, EventArgs e)
+        {
+            actualizarPrecios();
+        }
+
+        public void actualizarPrecios()
+        {
+            CsProductos elProducto = new CsProductos();
+            foreach (CsProductos producto in listaProductos)
+            {
+                if (producto.NombreProducto == cmb_IdProducto.Text)
+                {
+                    elProducto = producto;
+                    break;
+                }
+            }
+            CsFacturas lafactura = new CsFacturas();
+            foreach (CsFacturas factura in listaFacturas)
+            {
+                if (factura.IdFactura.ToString() == txt_idfac_desg.Text.Trim())
+                {
+                    lafactura = factura;
+                    break;
+                }
+            }
+            CsFactDetall lalinea = new CsFactDetall();
+            foreach (CsFactDetall linea in listaLinFact)
+            {
+                if (linea.Linea.ToString() == txt_LinSel.Text.Trim())
+                {
+                    lalinea = linea;
+                    break;
+                }
+            }
+
+            txt_LBaseImp.Text = (elProducto.Precio*(double)nud_Cantidad.Value).ToString();
+            txt_LIVA.Text = ((elProducto.Precio * (double)nud_Cantidad.Value) * 21.0 / 100).ToString();
+            txt_LTotal.Text = (((elProducto.Precio * 21.0 / 100)+elProducto.Precio)*(double)nud_Cantidad.Value).ToString();
+
+            txt_BaseImp.Text = (lafactura.BaseImponible+((elProducto.Precio* (double)nud_Cantidad.Value)- lalinea.Importe)).ToString();
+            txt_Iva.Text = (lafactura.Iva + ((elProducto.Precio* (double)nud_Cantidad.Value) * 21.0 / 100 - lalinea.Iva)).ToString();
+            txt_Total.Text = (((lafactura.BaseImponible * 21.0 / 100) + lafactura.BaseImponible)* (double)nud_Cantidad.Value).ToString();
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            foreach (CsFacturas factura in listaFacturas)
+            {
+                if (factura.IdFactura.ToString() == txt_idfac_desg.Text)
+                {
+                    factura.BaseImponible = double.Parse(txt_BaseImp.Text);
+                    factura.Iva = double.Parse(txt_Iva.Text);
+                    factura.TotalFactura = double.Parse(txt_Total.Text);
+                    break;
+                }
+            }
+            
+            foreach (CsFactDetall linea in listaLinFact)
+            {
+                if (linea.Linea.ToString() == txt_LinSel.Text.Trim())
+                {
+                    linea.NombreProducto = cmb_IdProducto.Text;
+                    linea.Cantidad = (int)nud_Cantidad.Value;
+                    linea.Importe = double.Parse(txt_LBaseImp.Text);
+                    linea.Iva = double.Parse(txt_LIVA.Text);
+                    linea.TotalLinea = double.Parse(txt_LTotal.Text);
+                    break;
+                }
+            }
+            actualizarFacturas();
+            actualizarLineas();
         }
     }
-
 }
