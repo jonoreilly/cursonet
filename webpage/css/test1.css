@@ -1,15 +1,12 @@
-
 p
 {
   background-color:red;
 }
 
-
 header
 {
   color:blue
 }
-
 
 nav
 {
@@ -17,13 +14,11 @@ nav
   min-height:50px; width:40%
 }
 
-
 footer
 {
   background-color:yellow;
   height:50px
 }
-
 
 h1
 {
@@ -31,12 +26,10 @@ h1
   border-color: blue
 }
 
-
 .flotante
 {
   float: right
 }
-
 
 .miclase
 {

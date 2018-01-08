@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+
+
+  <meta charset="utf-8"/>
+
+
+  <script>
+
+  function inicio ()
+  {
+    var boton = document.getElementById("miBoton");
+
+    //boton.addEventListener("click", saluda, "false");
+
+    boton.onclick = saluda;
+  }
+
+  function saluda(e)
+  {
+    var elemento = e.target;
+
+    alert(elemento.id);
+
+    elemento.style.width = "400px";
+  }
+
+  window.addEventListener("load", inicio, "false");
+
+  </script>
+
+
+</head>
+
+
+
+<body>
+
+
+  <button id="miBoton">Pulsame</button>
+
+
+</body>
+
+
+
+</html>
