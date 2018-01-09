@@ -16,8 +16,13 @@ body
 #imagen_cabecera_home
 {
   size: "1200px";
+  border-bottom: 10px solid grey;
   width: 100%;
+  height: 335px;
+  background-image: url("../media/imagenes/")
 }
+
+#imagen
 
 #contenedor
 {
@@ -103,6 +108,4 @@ footer
 #copy_footer
 {
   display: inline;
-
-
 }
