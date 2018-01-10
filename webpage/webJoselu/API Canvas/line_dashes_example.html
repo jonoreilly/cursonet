@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+ 
+
+
+
+function draw() {
+  var ctx = document.getElementById('canvas').getContext('2d');
+  
+  ctx.setLineDash([4, 2]);
+ 
+  ctx.strokeRect(10, 10, 100, 100);
+}
+
+
+
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+ </body>
+</html>

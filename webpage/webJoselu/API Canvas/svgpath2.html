@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+ 
+    function draw() {
+		var canvas = document.getElementById("canvas");
+		var ctx = canvas.getContext("2d");
+
+		var p = new Path2D("M10 10 h 120 v 40 h -40 Z");
+		ctx.fill(p)
+	}
+
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="150" height="150"></canvas>
+ </body>
+</html>
