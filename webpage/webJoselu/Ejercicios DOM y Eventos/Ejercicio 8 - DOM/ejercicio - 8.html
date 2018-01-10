@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Insertar y Eliminar Fila en Tabla</title>
+<style type="text/css">
+table {
+     border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+} 
+
+</style>
+<script type="text/javascript">
+
+
+function insertarFila() {
+
+	var elmTBODY = document.getElementById('CuerpoTabla');
+	var elmTR;
+	var elmTD;
+	var elmText;
+    elmTR = document.createElement('tr');
+	 
+    for (var i=0; i<3; i++) {
+        elmTD = document.createElement('td');
+        elmText = document.createTextNode('Nueva celda.');
+        elmTD.appendChild(elmText);
+        elmTR.appendChild(elmTD);
+        }
+     
+	elmTBODY.insertBefore(elmTR,elmTBODY.childNodes[3])
+
+ 
+
+}
+
+
+function eliminarFila() {
+  
+  var elmTBODY = document.getElementById('CuerpoTabla');
+  elmTBODY.removeChild(elmTBODY.childNodes[2]);
+}
+
+
+</script>
+</head>
+
+<body>
+<table>
+	<caption>Tabla</caption>
+	<thead>
+		<tr>
+			<th>Celda de encabezado</th>
+			<th>Celda de encabezado</th>
+			<th>Celda de encabezado</th>
+		</tr>
+	</thead>
+	<tfoot>
+		<tr>
+			<td colspan="3">Celda en pie</td>
+		</tr>
+	</tfoot>
+	<tbody id="CuerpoTabla">
+		<tr>
+			<td>Celda</td>
+			<td>Celda</td>
+			<td>Celda</td>
+		</tr>
+		<tr>
+			<td>Celda</td>
+			<td>Celda</td>
+			<td>Celda</td>
+		</tr>
+		<tr>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+		</tr>
+		<tr>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+		</tr>
+		<tr>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+		</tr>
+		<tr>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+			<td>Nueva celda.</td>
+		</tr>
+	</tbody>
+</table>
+<a href="#" onclick="insertarFila();">Anadir linea</a>
+
+<a href="#" onclick="eliminarFila();">Eliminar linea</a>
+
+</body>
+</html>

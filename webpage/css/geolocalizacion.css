@@ -1,0 +1,60 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+#contenedor
+{
+  margin: auto;
+  padding: auto;
+}
+
+
+.contenido_izdo_mitad
+{
+  width: 542px;
+  display: inline-block;
+  padding: 20px;
+  background-color: lightgrey;
+}
+
+
+.contenido_dcho_mitad
+{
+  width: 542px;
+  display: inline-block;
+  padding: 20px;
+  background-color: lightblue;
+}
+
+
+.contenido_izdo_mitad ul
+{
+  margin-left: 20px;
+  margin-top: 10px;
+  list-style-type: square;
+}
+
+
+.tip
+{
+  content: url("../media/imagenes/tip.jpg");
+  position: relative;
+  top: 30px;
+  margin-right: 10px;
+}
+
+
+.naranja
+{
+  background-color: orange;
+  border-radius: 25px;
+}

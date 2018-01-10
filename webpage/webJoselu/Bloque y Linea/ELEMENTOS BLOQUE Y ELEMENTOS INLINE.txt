@@ -1,0 +1,21 @@
+ELEMENTOS BLOQUE
+===============================
+
+Se colocan siempre en su propia línea, debajo de los elementos anteriores
+Se expanden hasta ocupar toda la anchura disponible ( la del elemento padre )
+La altura se ajusta al contenido
+Pueden contener otros elementos inline o block
+Se les puede fijar altura y anchura con CSS ( width y height )
+Se les puede asignar margin y padding con CSS
+Ignoran la propiedad CSS vertical-align
+
+
+ELEMENTOS LINEA
+===============================
+
+No crean una nueva línea. Se colocan ‘en línea’ con otros elementos
+Su anchura y altura se ajusta al contenido y no podemos cambiarlas con CSS ( ignora widht y height )
+Sólo podemos fijar margin-left y margin-right. Ignoran margin-top y margin-bottom 
+Sólo pueden contener otros elementos inline
+Debe respetar la propiedad white-space de CSS
+Respeta vertical-align

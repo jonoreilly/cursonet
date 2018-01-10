@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset = "utf-8"/>
+		<title>Super web</title>
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="css/estilos.css" type="text/css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"/>
+		
+		<script src="js/geolocation.js" type="text/javascript"></script>
+	
+		
+		
+	</head>
+	
+	<body>
+		<header>
+			<nav id="menu_completo">
+				<div id="centrado_menu">
+					<div id="icon_menu"><a href="index.html"><img src="img/html-js-css-icon.png"/></a></div>
+					<ul>
+						<li><a href="formulario.html">Formulario</a></li>
+						<li><a href="video.html">Video</a></li>
+						<li><a href="audio.html">Audio</a></li>
+						<li><a href="etiquetas_semanticas.html">Etiquetas semánticas</a></li>
+						<li><a href="dragdrop.html">Drag & Drop</a></li>
+						<li><a href="geolocalizacion.html">Geolocalización</a></li>
+					</ul>
+				</div>
+			
+			</nav>
+			<div id="imagen_cabecera_geolocation"></div>
+
+		
+		</header>
+		
+		<div id="contenedor">
+		
+			<section class="seccion_horizontal">
+			
+				<h1>Geolocation - Métodos</h1>
+				
+				<div class= "contenido_izdo_mitad blanco">
+				
+					<p><strong>Éstos son los métodos mas importantes de la API Geolocation:</strong></p><br>
+					<ul>
+					
+						<li>getCurrentPosition(ubicación, errores, configuración)</li><br>
+						<li>watchPosition(ubicación, errores, configuración)</li><br>
+						<li>clearWatch(ubicación, errores, configuración)</li><br>
+					
+					</ul><br>
+					
+					<p><strong>Tanto "errores" como "configuración" son opcionales.</strong></p><br>
+					
+					<p><strong>getCurrentPosition</strong> nos da la posición solo en el momento en que la pedimos.</p><br>
+					
+					<p><strong>watchPosition</strong> funciona igual que getCurrentPosition pero ésta tiene la posibilidad de refrescar los datos cada cierto tiempo. Si el usuario se mueve, por ejemplo con un dispositivo movil, nos refrescará la posición.</p><br>
+				
+					<p><strong>clearWatch</strong> "resetea" el watchPosition indicando que deje de dar la ubicación del usuario.</p><br>
+					
+					
+				</div>
+				
+
+				
+				<div class= "contenido_dcho_mitad naranja tip_config">
+				
+					<div class="tip">Tips</div><br><br><br>
+				
+					<p><strong>Para que esta API funcione en nuestros navegadores es necesario activarla, ya que por defecto viene desactivada. En Google Chrome: configuración --> configuración avanzada --> Privacidad y seguridad --> Configuración de contenido --> Ubicación --> Permitir</strong></p><br>
+					
+					<p><strong>Geolocation es un objeto que pertenece a su vez al objeto Navigator.</strong></p><br>
+					
+					<p><strong>Para profundizar en esta API <a href="https://dev.w3.org/geo/api/spec-source.html" target="_blank"> pulse aquí.</a></strong></p>
+					
+					
+					
+
+				
+
+					
+				</div>
+				
+				
+
+			</section>
+		
+		
+			<section class="seccion_horizontal">
+			<h1>API Geolocation - Objetos retornados</h1>
+		
+			
+				<div class= "contenido_izdo_mitad">
+				
+					<p><strong>Tanto getCurrentPosition como watchPosition retornan un objeto "Position" siempre que la localización tenga éxito.</strong></p><br>
+					
+					<p><strong>Este objeto "position" lo recibe la "CallBack" ("ubicación" en nuestro ejemplo anterior) como argumento.</strong></p><br>
+					
+					<p><strong>Propiedades del objeto "Position":</strong></p><br>
+					
+					<ul>
+					
+						<li><strong>Coords</strong>: contiene el conjunto de valores que determinan la posición.<br><br>Esta propiedad tiene una serie de valores:</li><br>
+						
+							<ul>
+								<li>Latitude</li><br>
+								<li>Longitude</li><br>
+								<li>Altitude</li><br>
+								<li>Accuracy</li><br>
+								<li>altitudeAccuracy</li><br>
+								<li>Heading</li><br>
+								<li>Speed</li><br>
+							
+							</ul><br>
+							
+							
+						<li><strong>Timestamp</strong>: propiedad que indica el momento exacto en el que se determinó la posición.</li><br>
+					
+					</ul>
+				
+
+					
+				</div>
+				
+				
+				<div class= "contenido_dcho_mitad geolocation_objetos_retornados">
+				
+					<p><strong>Tanto getCurrentPosition como watchPosition retornan un objeto "Error" siempre que la localización haya fallado.</strong></p><br>
+					
+					<p><strong>Este objeto "error" lo recibe la "CallBack" ("errores" en nuestro ejemplo anterior) como argumento.</strong></p><br>
+					
+					<p><strong>Propiedades del objeto "Error":</strong></p><br>
+					
+					<ul>
+					
+						<li><strong>Code</strong>: representado por 3 constantes:</li><br>
+						
+							<ul>
+								<li>1: Permiso denegado.</li><br>
+								<li>2: Ubicación no disponible.</li><br>
+								<li>3: Tiempo para detectar ubicación excedido.</li><br>
+				
+							
+							</ul><br>
+							
+							
+						<li><strong>Message</strong>: Dependiendo del error generado.</li><br>
+					
+					</ul>
+
+				</div>
+			
+			</section>
+		
+		
+			<section class="seccion_horizontal">
+			
+				<h1>El tercer parámetro: configuración</h1>
+				
+				<div class= "contenido_izdo_mitad azul">
+				
+					<p><strong>Este parámetro está especialmente diseñado para dispositivos móviles.</strong></p><br>
+					
+					<p><strong>Este parámetro, al contrario de los dos primeros que son CallBacks, puede contener un objeto literal.</strong></p><br>
+					
+					<p><strong>Este objeto literal puede configurar tres propiedades:</strong></p><br>
+				
+					
+					<ul>
+					
+						<li><strong>enableHighAccuracy</strong>: booleano. Si es true se utilizarán sistemas GPS para la localización. Por defecto es false.</li><br>	
+							
+						<li><strong>Timeout</strong>: tiempo en milisegundos para llevar a cabo la localización. Si no se obtiene, devuelve "timeout".</li><br>
+						
+						<li><strong>maximumAge</strong>: determina si se hace uso de la caché para buscar la última localización.</li><br>
+					
+					</ul>
+				
+
+					
+				</div>
+				
+				
+				<div class= "contenido_dcho_mitad naranja tip_config">
+				
+					<div class="tip">Tips</div><br><br><br>
+				
+					<p><strong>El método "watchPosition" consume muchísimos recursos en nuestro dispositivo móvil.</strong></p><br>
+					
+					<p><strong>Un objeto literal podría ser (por ejemplo):</strong></p><br>
+					
+					<p><strong>var configuracion ={enableHighAccuracy:true, Timeout:2000, maximumAge:6000 }</strong></p><br>
+				
+					
+				</div>
+			
+			
+			</section>
+		
+		
+		
+		
+			<section class="seccion_horizontal">
+			
+				<h1>Nuestra ubicación</h1>
+			
+				<div>
+				
+					<button id="btn_mi_ubicacion">Mi ubicación</button>
+					<p id="mi_ubicacion"></p>
+					
+				</div>
+		
+			
+			</section>
+		
+		
+			<section class="seccion_horizontal">
+			
+				<h1>Llevando nuestra posición a un mapa</h1>
+				
+				<div class= "contenido_izdo_mitad blanco">
+			
+					<div>
+					
+						
+						<div id="mi_google_maps"></div><br>
+						<button id="btn_mi_ubicacion_google_maps">Mi ubicación en Google Maps</button>
+						
+					</div>
+				
+				</div>
+				
+				
+				<div class= "contenido_dcho_mitad naranja tip_maps">
+				
+					<div class="tip">Tips</div><br><br><br>
+				
+					<p><strong>La API de Google Maps nos ofrece un montón de recursos a los desarrolladores.</strong></p><br>
+					<p><strong>Google Maps para desarrolladores está <a href="https://developers.google.com/maps/" target="_blank"> aquí.</a></p><br><br>
+					
+					<p><strong>La expresión que hemos incluído en la variable "miMapa" de JavaScript la hemos obtenido allí.</strong></p>
+					
+				</div>
+				
+			
+			
+			</section>
+		
+		
+		
+
+		</div><!--contenedor-->
+		
+		<footer>
+		
+			<div id="centrado_footer">
+				<div id="copy_footer">Copyright 2017&copy; - Joselu Cantero - joselustoner@gmail.com </div>
+				<div id="social_media">
+					<a href="https://es-la.facebook.com/Rammstein/" target="_blank"><img src="img/facebook.png"/></a>
+					<a href="https://twitter.com/thebeatles" target="_blank"><img src="img/twitter.png"/>
+					<a href="https://www.youtube.com/channel/UCYp3rk70ACGXQ4gFAiMr1SQ" target="_blank"><img src="img/youtube.png"/>
+				</div>
+			</div>
+		
+		</footer>
+		
+	</body>
+
+
+</html>

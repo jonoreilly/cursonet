@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset = "utf-8"/>
+		<title>Super web</title>
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="css/estilos.css" type="text/css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"/>
+		
+		<script src="js/dragdrop.js" type="text/javascript"></script>
+	
+		
+		
+	</head>
+	
+	<body>
+		<header>
+			<nav id="menu_completo">
+				<div id="centrado_menu">
+					<div id="icon_menu"><a href="index.html"><img src="img/html-js-css-icon.png"/></a></div>
+					<ul>
+						<li><a href="formulario.html">Formulario</a></li>
+						<li><a href="video.html">Video</a></li>
+						<li><a href="audio.html">Audio</a></li>
+						<li><a href="etiquetas_semanticas.html">Etiquetas semánticas</a></li>
+						<li><a href="dragdrop.html">Drag & Drop</a></li>
+						<li><a href="geolocalizacion.html">Geolocalización</a></li>
+					</ul>
+				</div>
+			
+			</nav>
+			<div id="imagen_cabecera_dragdrop"></div>
+
+		
+		</header>
+		
+		<div id="contenedor">
+		
+		<section class="seccion_horizontal">
+		
+			<h1>Drag & Drop</h1>
+			
+			<div class= "contenido_izdo_mitad blanco">
+		
+				
+				<p><strong>Eventos de la API Drag&Drop para el objeto a arrastrar:</strong></p><br>
+				
+				<ul>
+				
+					<li><strong>dragstart:</strong> desencadena la acción al inicio del arrastre.</li><br>
+					<li><strong>drag:</strong> desencadena la acción durante el proceso de arrastre.</li><br>
+					<li><strong>dragend:</strong> desencadena la acción al terminar de arrastrar.</li><br><br>
+				</ul><br>
+				
+				<p><strong>Eventos de la API Drag&Drop para el objeto de destino:</strong></p><br>
+				
+				<ul>
+				
+					<li><strong>dragenter:</strong> desencadena la acción cuando el puntero del ratón entra en el área de destino.</li><br>
+					<li><strong>dragover :</strong> desencadena la acción cuando el puntero del ratón se encuentra sobre el área de destino.</li><br>
+					<li><strong>drop:</strong> desencadena la acción al soltar el objeto arrastrado sobre el área de destino.</li><br>
+					<li><strong>dragleave:</strong> desencadena la acción cuando el objeto arrastrado abandona el área de destino.</li><br><br>
+				</ul><br>
+				
+				<p><strong>Los métodos del objeto dataTransfer son dos:</strong></p><br>
+				
+				<ul>
+				
+					<li><strong>setData:</strong> en donde declaramos qué datos son transferidos.</li><br>
+					<li><strong>getData :</strong> en donde declaramos qué datos serán capturados.</li><br>
+
+				</ul><br>
+				
+				
+				
+
+			
+			</div>
+			
+
+			
+			<div class= "contenido_dcho_mitad naranja tip_config">
+			
+				<div class="tip">Tips</div><br><br><br>
+			
+				<p><strong>La API Drag & Drop forma parte del standard HTML5.</strong></p><br>
+				
+				<p><strong>Consiste en "coger" con el ratón un elemento de una localización en nuestra web y sin soltarlo arrastrarlo hasta la posición deseada. </strong></p><br>
+				
+				<p><strong>Todos los elementos son "arrastrables".</strong></p><br>
+				
+				<p><strong>En la acción participarán dos objetos: el objeto que se arrastra y el objeto de destino.</strong></p><br>
+				
+				<p><strong>Son posibles varios objetos de destino.</strong></p><br>
+				
+				<p><strong>El método preventDefault() resetea el comportamiento del navegador con respecto a arrastrar objetos (cada navegador hace una cosa distinta...). Esto nos da via libre para decidir nosotros, con nuestro código, cómo se ha de comportar cuando arrastremos un objeto.</strong></p><br><br>
+				
+				<p><strong>Para que al arrastrar una imagen se vea la "ghost image" el escrtorio debe estar con el tema "aero". Con el tema "clásico" es posible que no se vea. Esto también depende de navegadores etc.</strong></p><br>
+				
+			</div>
+			
+			
+
+		</section>
+		
+		
+		<section class="seccion_horizontal">
+		
+		<h1>Drag&Drop con JavaScript</h1>
+		
+		<div id="caja_imagen_piloto">
+			<img id="imagen_piloto" src="img/sebastian-vettel.jpg"/>
+			<img id="imagen_piloto2" src="img/kimi-raikkonen.jpg"/>
+			<img id="imagen_piloto3" src="img/fernando-alonso.jpg"/>
+		</div>
+		
+		<div id="caja_imagen_escuderia"></div>
+		
+		
+		</section>
+		
+		
+
+		
+		
+		
+
+		</div><!--contenedor-->
+		
+		<footer>
+		
+			<div id="centrado_footer">
+				<div id="copy_footer">Copyright 2017&copy; - Joselu Cantero - joselustoner@gmail.com </div>
+				<div id="social_media">
+					<a href="https://es-la.facebook.com/Rammstein/" target="_blank"><img src="img/facebook.png"/></a>
+					<a href="https://twitter.com/thebeatles" target="_blank"><img src="img/twitter.png"/>
+					<a href="https://www.youtube.com/channel/UCYp3rk70ACGXQ4gFAiMr1SQ" target="_blank"><img src="img/youtube.png"/>
+				</div>
+			</div>
+		
+		</footer>
+		
+	</body>
+
+
+</html>

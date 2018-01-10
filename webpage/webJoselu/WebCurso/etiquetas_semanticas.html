@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset = "utf-8"/>
+		<title>Super web</title>
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="css/estilos.css" type="text/css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"/>
+		
+		
+		
+		
+	</head>
+	
+	<body>
+		<header>
+			<nav id="menu_completo">
+				<div id="centrado_menu">
+					<div id="icon_menu"><a href="index.html"><img src="img/html-js-css-icon.png"/></a></div>
+					<ul>
+						<li><a href="formulario.html">Formulario</a></li>
+						<li><a href="video.html">Video</a></li>
+						<li><a href="audio.html">Audio</a></li>
+						<li><a href="etiquetas_semanticas.html">Etiquetas semánticas</a></li>
+						<li><a href="dragdrop.html">Drag & Drop</a></li>
+						<li><a href="geolocalizacion.html">Geolocalización</a></li>
+					</ul>
+				</div>
+			
+			</nav>
+			<div id="imagen_cabecera_etiquetas_semanticas"></div>
+
+		
+		</header>
+		
+		<div id="contenedor">
+		
+		<section class="seccion_horizontal">
+			<h1>&ltfigure&gt y &ltfigcaption&gt</h1>
+			
+			<div class= "contenido_izdo">
+			
+				<figure>
+					
+					<img src="img/figure.jpg"/>
+					<figcaption>Pink Floyd</figcaption>
+				
+				</figure>
+			
+			</div>
+			
+			<div class="contenido_dcho">
+			
+				<p><strong>&ltfigure&gt no solo sirve para insertar imágenes</strong></p><br>
+				
+				<p>Se utiliza para insertar elementos que tienen algo que ver con el contenido pero, a su vez, son elementos independientes. Las imágenes y los vídeos cumplen con esa condición.</b></p><br>
+				
+				<p><strong>&ltfigcaption&gt nos permite poner un título a pie de imagen.</strong></p><br>
+				
+				<p>El sentido de utilizar &ltfigure&gt o &ltfigcaption&gt no es el de construir la estructura de la página web sino la de darle un "sentido semántico" para que cualquier dispositivo sepa cual es el contenido de esas etiquetas.  </p><br>
+			
+			</div>
+
+		</section>
+		
+		
+		<section class="seccion_horizontal">
+		<h1>Otras etiquetas semánticas</h1>
+	
+		
+			<div class= "contenido_izdo">
+			
+				<table>
+				  <tr>
+					<th>Etiqueta</th>
+					<th>Uso semántico en html5</th>
+				  </tr>
+				  <tr>
+					<td>&ltmark&gt&lt/mark&gt</td>
+					<td>Marcar un texto sin importancia ni énfasis (pe: resultado de una búsqueda).</td>
+				  </tr>
+				  <tr>
+					<td>&ltem&gt&lt/em&gt</td>
+					<td>Para indicar énfasis. Sustituye a la etiqueta &lti&gt.</td>
+				  </tr>
+				  <tr>
+					<td>&ltstrong&gt&lt/strong&gt</td>
+					<td>Marcado de texto importante. Sustituye a la etiqueta &ltb&gt. </td>
+				  </tr>
+				  <tr>
+					<td>&ltsmall&gt&lt/small&gt</td>
+					<td>Para marcar textos legales.</td>
+				  </tr>
+				  <tr>
+					<td>&ltcite&gt&lt/cite&gt</td>
+					<td>Títulos de películas, canciones, trabajos propios...</td>
+				  </tr>
+				  <tr>
+					<td>&ltaddress&gt&lt/address&gt</td>
+					<td>Para información de contacto.</td>
+				  </tr>
+				  <tr>
+					<td>&lttime&gt&lt/time&gt</td>
+					<td>Fechas y horas.</td>
+				  </tr>
+				</table>
+				
+			</div>
+			
+			
+			<div class= "contenido_dcho">
+			
+				<p><strong>Este texto nos va a servir como ejemplo de las etiquetas semánticas del cuadro adjunto. Ésta, por ejemplo, es una etiqueta &ltstrong&gt. </strong></p><br>
+				<p>Las etiquetas &ltem&gt sirven para indicar énfasis.<em>El texto aparece en cursiva</em></p><br>
+				<p>Con &ltmark&gt resaltamos texto que no es importante.Produce el efecto de marcado del típico <mark>rotulador amarillo fosforito.</mark></p><br>
+				<p>Hay que resaltar la importancia del <strong>sentido semántico</strong> de estas etiquetas más que su sentido visual. Es importante comprender la diferencia. </p><br>
+				<p>El texto que está en las etiquetas &ltstrong&gt es bastante importante para los buscadores a la hora de posicionar las paginas web y categorizarlas. Si es importante para ti, también lo es para el buscador de turno. </p><br>
+				<p>La etiqueta &ltsmall&gt se utiliza para presentar textos legales, copyright etc. <small>Si le damos otro uso, como en este caso, no estaremos respetando al 100% el standard.</small></p><br>
+				<p>Voy a nombrar un disco de The Beatles para utilizar la etiqueta &ltcite&gt:<cite>Rubber Soul</cite> es probablemente su mejor disco.</p><br>
+				<p>Con &ltaddress&gt pongo una dirección o teléfono. También produce un salto de carro automático ya que esta etiqueta es de tipo block. <address>Tlfno: 333 333 333 333</address> </p><br>
+				<p>La etiqueta &lttime&gt representa horas y fechas. Tiene sus propios atributos como <strong>datetime</strong> (donde introducimos la fecha y la hora) o <strong>pubdate</strong> que indicará que la fecha de publicación ha sido la indicada en <strong>datetime</strong>.</p><br>
+				<p><time datetime="2017/12/07" pubdate>Noticia publicada el 7 de diciembre de 2017.</time></p><br>
+			</div>
+		
+		</section>
+
+		</div><!--contenedor-->
+		
+		<footer>
+		
+			<div id="centrado_footer">
+				<div id="copy_footer">Copyright 2017&copy; - Joselu Cantero - joselustoner@gmail.com </div>
+				<div id="social_media">
+					<a href="https://es-la.facebook.com/Rammstein/" target="_blank"><img src="img/facebook.png"/></a>
+					<a href="https://twitter.com/thebeatles" target="_blank"><img src="img/twitter.png"/>
+					<a href="https://www.youtube.com/channel/UCYp3rk70ACGXQ4gFAiMr1SQ" target="_blank"><img src="img/youtube.png"/>
+				</div>
+			</div>
+		
+		</footer>
+		
+	</body>
+
+
+</html>

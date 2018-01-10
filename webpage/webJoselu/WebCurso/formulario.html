@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset = "utf-8"/>
+		<title>Super web</title>
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="css/estilos.css" type="text/css"/>
+		<link rel="stylesheet" href="css/form.css" type="text/css"/>
+		<link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"/>
+		
+		
+		
+
+		
+		
+	</head>
+	
+	<body>
+		<header>
+			<nav id="menu_completo">
+				<div id="centrado_menu">
+					<div id="icon_menu"><a href="index.html"><img src="img/html-js-css-icon.png"/></a></div>
+					<ul>
+						<li><a href="formulario.html">Formulario</a></li>
+						<li><a href="video.html">Video</a></li>
+						<li><a href="audio.html">Audio</a></li>
+						<li><a href="etiquetas_semanticas.html">Etiquetas semánticas</a></li>
+						<li><a href="dragdrop.html">Drag & Drop</a></li>
+						<li><a href="geolocalizacion.html">Geolocalización</a></li>
+					</ul>
+				</div>
+			
+			</nav>
+		<div id="imagen_cabecera_formulario"></div>
+		
+		</header>
+		
+		<div id="contenedor">
+		
+			<section class="seccion_horizontal">
+		
+				<h1>Formulario</h1>
+		
+				<div class= "contenido_izdo_mitad azul_claro">
+	
+					<div id="form_insc">
+					
+						<form action="" name="inscripcion_form" method="get"> 
+							
+							<p> 
+								<label for="nombreId"> Nombre </label>
+								<input id="nombreId" name="nombre" required type="text" maxlength="25" size="20" placeholder="Escriba su nombre" />
+							</p>
+							<p> 
+								<label for="password"> Contraseña </label>
+								<input id="password" name="password" required type="password" placeholder="C0ntr4s3ny4" /> 
+							</p>
+							<p>
+								<label for="titulo_selId">Título más alto obtenido</label><br />
+								<select name="titulo_sel" id="titulo_selId">
+									<option value="0">Seleccione un título</option>
+									<option value="1">Formación básica</option>
+									<option value="2">Formación secundaria</option>
+									<option value="3">Licenciatura</option>
+									<option value="4">Máster</option>
+									<option value="5">Doctorado</option>
+								</select>
+							</p>
+							<p>                
+								<label for="comment"> Comentarios </label><br />
+								<textarea id="comment" name="comment" required rows="8" cols="66"></textarea> 
+							</p>
+							<p> 
+								<label for="newsLetter">Suscripción a la newsletter</label>
+								<input type="checkbox" name="newsLetter" id="newsLetter" value="ok" /> 
+							</p>
+							<p>
+								<label for="sexoId">Sexo</label><br/>
+								Mujer <input id="sexoId" type="radio" name="sexo" value="M"/> 
+								Hombre <input type="radio" name="sexo" value="H" />
+							</p>
+							<p>
+								<input type="submit" value="Registrarse" /> 
+							</p>
+						</form>
+					</div>
+				</div>
+				
+				<div class= "contenido_dcho_mitad blanco">
+				
+					<p><strong>Los formularios nos permiten enviar datos al servidor (BBDD y otras fuentes de almacenamiento).</strong></p><br>
+					<p>El elemento "input" tiene un montón de atributos:</p><br>
+					
+					<ul>
+					
+						<li><strong>text</strong></li><br>
+						<li><strong>email</strong></li><br>
+						<li><strong>search</strong></li><br>
+						<li><strong>url</strong></li><br>
+						<li><strong>tel</strong></li><br>
+						<li><strong>number (junto con min, max y step)</strong></li><br>
+						<li><strong>range (junto con min, max y step)</strong></li><br>
+						<li><strong>date</strong></li><br>
+						<li><strong>week</strong></li><br>
+						<li><strong>month</strong></li><br>
+						<li><strong>time</strong></li><br>
+						<li><strong>datetime</strong></li>
+					</ul><br>
+					
+					<p>Con estos atributos las casillas ya llevan incluídos los elementos de validación pertinentes a cada uso.</p><br>
+					
+					<p>Esto facilita enormemente el diseño del formulario ya que no tenemos que incluir, como antigüamente, JavaScript de validación.</p><br>
+				
+				</div>
+				
+			</section>
+			
+			
+			<section class="seccion_horizontal">
+		
+				<h1>Ejemplos de "type" con "input"</h1>
+				
+				<div class= "contenido_izdo_mitad azul_claro">
+			
+				
+					<form  id="mi_formulario" name="ejemplos_input" action="" method="get">
+					
+						<p>
+							<label>Mi texto:</label><br>
+							<input class="mis_inputs" type="text" name="input_texto" placeholder="introduzca un texto"/>
+						</p>
+						<p>
+							<label>Mi e-mail:</label><br>
+							<input class="mis_inputs" type="email" name="input_email" placeholder="introduzca un e-mail"/>
+						</p>
+						<p>
+							<label>Mi búsqueda:</label><br>
+							<input class="mis_inputs" type="search" name="input_search" placeholder="palabra a buscar"/>
+						</p>
+						<p>
+							<label>Mi URL:</label><br>
+							<input class="mis_inputs" type="url" name="input_url" placeholder="introduzca una URL"/>
+						</p>
+						<p>
+							<label>Mi number:</label><br>
+							<input class="mis_inputs" type="number" name="input_number" placeholder="introduzca un número"/>
+						</p>
+						<p>
+							<label>Mi number con rango:</label><br>
+							<input class="mis_inputs" type="number" name="input_number" min="20" max="100" placeholder="introduzca un número entre 20 y 100"/>
+						</p>
+						<p>
+							<label>Mi number con rango y con step:</label><br>
+							<input class="mis_inputs" type="number" name="input_number" min="20" max="100" step="5" placeholder="introduzca un número entre 20 y 100"/>
+						</p>
+						<p>
+							<label>Mi range:</label><br>
+							<input class="mis_inputs" type="range" name="input_range" min="20" max="100"/>
+						</p>
+						<p>
+							<label>Mi date:</label><br>
+							<input class="mis_inputs" type="date" name="input_date"/>
+						</p>
+						<p>
+							<label>Mi month:</label><br>
+							<input class="mis_inputs" type="month" name="input_month"/>
+						</p>
+						<p>
+							<label>Mi week:</label><br>
+							<input class="mis_inputs" type="week" name="input_week"/>
+						</p>
+						<p>
+							<label>Mi time:</label><br>
+							<input class="mis_inputs" type="time" name="input_time"/>
+						</p>
+						<p>
+							<label>Mi datetime:</label><br>
+							<input class="mis_inputs" type="datetime" name="input_datetime"/>
+						</p>
+						<p>
+							<datalist id="informacion">
+								<option value="222222222" label="Telefono 1">
+								<option value="333333333" label="Telefono 2">
+								<option value="444444444" label="Telefono 3">
+							</datalist>
+							<label>Mi datalist:</label><br>
+							<input id="mi_datalist" class="mis_inputs" type="tel" name="input_datalist" list="informacion"/>
+							
+						</p>
+						
+						<p>
+							<input class="mis_inputs" type="submit" value="Enviar" /> 
+						</p>
+					
+					</form>
+
+				
+				</div>
+				
+				<div class= "contenido_dcho_mitad naranja tip_config">
+			
+					<div class="tip">Tips</div><br><br><br>
+				
+					<p><strong>El type "tel" no hace ninguna validación. Informa al navegador de que "lo que hay ahí" es un teléfono y lo adapte dependiendodel dispositivo. No es lo mismo verlo en un navegador de tablet, de móvil etc. </strong></p><br>
+					<p><strong>"placeholder" nos permite añadir un comentario en la casilla a rellenar indicando qué debe introducirse en ella.</strong></p><br>
+					<p><strong>"required" indica al navegador que este campo de de relleno obligatorio.</strong></p><br>
+					<p><strong>"autofocus": la función de este atributo es poner el cursor de manera activa en un input del formulario sin necesidad de hacer click en él.</strong></p><br>
+					<p><strong>"form": con este atributo (no confundir con la etiqueta) no es obligatorio que los input de un formulario estén dentro del mismo.</strong></p><br>
+					<p><strong>"pattern": mediante este atributo podremos delimitar mediante expresiones regulares el contenido insertado por el usuario en los inputs de los formularios.</strong></p><br>
+					<p><strong>"multiple":con este atributo se pueden seleccionar varios ficheros o emails en el envío de formularios, es compatible con los input de tipo file o email. Los datos los separaremos con comas.</strong></p><br>
+					<p><strong>La verdadera potencia de "datalist" radica en la posibilidad de llenar las listas desde BBDD etc.</strong></p><br>
+					<p><strong>Con las especificaciones HTML5 hemos visto una serie de atributos que son muy útiles para hacer validaciones automáticas. Sin embargo para hacer validaciones más complejas estas utilidades se nos quedan cortas.</strong></p><br>
+					<p><strong>La API forms de HTML5 nos provee de varios elementos que nos permitirán hacer estas validaciones:</strong></p><br>
+			
+					<ul>
+					
+						<li><strong>setCustomValidity</strong> (método) </li><br>
+						<li><strong>invalid</strong> (evento)</li><br>
+						<li><strong>validityState</strong> (objeto)</li><br>
+
+					</ul><br>
+			
+			
+			</div>
+			
+				
+			</section>	
+				
+				
+
+		</div><!--contenedor-->
+		
+		<footer>
+		
+			<div id="centrado_footer">
+				<div id="copy_footer">Copyright 2017&copy; - Joselu Cantero - joselustoner@gmail.com </div>
+				<div id="social_media">
+					<a href="https://es-la.facebook.com/Rammstein/" target="_blank"><img src="img/facebook.png"/></a>
+					<a href="https://twitter.com/thebeatles" target="_blank"><img src="img/twitter.png"/>
+					<a href="https://www.youtube.com/channel/UCYp3rk70ACGXQ4gFAiMr1SQ" target="_blank"><img src="img/youtube.png"/>
+				</div>
+			</div>
+		
+		</footer>
+		
+	</body>
+
+
+</html>

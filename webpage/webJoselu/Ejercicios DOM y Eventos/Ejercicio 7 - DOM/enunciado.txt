@@ -1,0 +1,1 @@
+Partiendo de tres cajas con una imagen cada una, conseguir minimizarlas, restaurar su tamaño original y cambiar las imágenes de posición.

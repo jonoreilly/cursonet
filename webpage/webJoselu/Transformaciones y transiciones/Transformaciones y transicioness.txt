@@ -1,0 +1,9 @@
+Transiciones
+Las transiciones permiten controlar la velocidad a la que se van a modificar las propiedades de un elemento inclusive se pueden aplicar curvas de aceleración permitiendo de esta forma crear animaciones.
+
+Las transiciones CSS, parte del borrador de la especificación CSS3, proporcionan una forma de animar los cambios de las propiedades CSS, en lugar de que los cambios surtan efecto de manera instantánea. Por ejemplo, si cambias el color de un elemento de blanco a negro, normalmente el cambio es instantáneo. Al habilitar las transiciones CSS, el cambio sucede en un intervalo de tiempo que puedes especificar, siguiendo una curva de aceleración que puedes pe sonalizar.
+
+
+
+Transformaciones
+Las transformaciones CSS permiten modificar el desplazamiento, la escala, rotación de un elemento y pueden ser en dos o tres dimensiones, en esta ocasión vamos a trabajar con elementos 2D

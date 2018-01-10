@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+<head>
+
+
+
+  <meta charset="utf-8"/>
+
+
+  <title>Pagina de programacion html</title>
+
+
+  <link rel="stylesheet" href="../css/reset.css"/>
+  <link rel="stylesheet" href="../css/geolocalizacion.css"/>
+
+  <script src="../js/geolocalizacion.js"></script>
+
+
+
+</head>
+
+
+
+
+<body>
+
+
+
+  <header>
+
+  </header>
+
+
+
+  <div id="contenedor">
+
+
+    <section class="seccion_horizontal">
+
+
+      <div class="contenido_izdo_mitad blanco">
+
+        <p><strong>Geolocation API tiene 3 funciones:</strong></p><br/>
+
+        <ul>
+          <li>getCurrentPosition(ubicacion, errores, configuracion)</li>
+          <li>watchPosition(ubicacion, errores, configuracion)</li>
+          <li>clearWatch(ubicacion, errores, configuracion)</li>
+        </ul>
+        <br/>
+        <p><strong>getCurrentPosition pilla una instantanea de la ubicacion del aparato</strong></p><br/>
+        <p><strong>watchPosition va sacando la ubicacion cada cierto tiempo</strong></p><br/>
+
+      </div>
+
+
+      <div class="contenido_dcho_mitad naranja">
+
+        <div class="tip">Tips</div>
+
+      </div>
+
+
+    </section>
+
+    <button id="btn_mi_ubicacion">localizar</button>
+    <p id="mi_ubicacion">Tu ubicacion</p>
+    <div id="map_mimapa"></div>
+
+
+
+
+  </div>
+
+
+
+</body>
+
+
+
+</html>

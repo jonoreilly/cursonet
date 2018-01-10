@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+		<meta charset = "utf-8"/>
+		<title>Super web</title>
+		<link rel="stylesheet" href="css/reset.css" type="text/css"/>
+		<link rel="stylesheet" href="css/estilos.css" type="text/css"/>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600"/>
+		
+		<script src="js/audio.js" type="text/javascript"></script>
+		
+		
+	</head>
+	
+	<body>
+		<header>
+			<nav id="menu_completo">
+				<div id="centrado_menu">
+					<div id="icon_menu"><a href="index.html"><img src="img/html-js-css-icon.png"/></a></div>
+					<ul>
+						<li><a href="formulario.html">Formulario</a></li>
+						<li><a href="video.html">Video</a></li>
+						<li><a href="audio.html">Audio</a></li>
+						<li><a href="etiquetas_semanticas.html">Etiquetas semánticas</a></li>
+						<li><a href="dragdrop.html">Drag & Drop</a></li>
+						<li><a href="geolocalizacion.html">Geolocalización</a></li>
+					</ul>
+				</div>
+			
+			</nav>
+			<div id="imagen_cabecera_audio"></div>
+
+		
+		</header>
+		
+		<div id="contenedor">
+		
+		<section class="seccion_horizontal">
+			<h1>Audio</h1>
+			
+			<div class= "contenido_izdo_audio">
+							
+				<audio controls>
+				
+					<source src="audio/Tchaikovsky_Nocturne_orch.mp3" type="audio/mpeg">
+					<source src="audio/Tchaikovsky_Nocturne_orch.ogg" type="audio/ogg">
+
+					Tu navagador no soporta audio html5. Actualizalo!!!
+				</audio>
+			
+			</div>
+			
+			<div class="contenido_dcho_audio">
+			
+				<p>Con las especificaciones HTML5 podemos incluir audios de una manera muy sencilla. Hasta hace pocos años para introducir audio en la web necesitábamos de plugins como Flash.</p><br>
+				
+				<p><strong>El audio en html5 tiene múltiples atributos. Los más utilizados son:</strong></p><br>
+				<ul>
+					<li><strong>src:</strong> es donde se encuentra físicamente el archivo de sonido.</li><br>
+					<li><strong>controls:</strong> si nuestro audio va a tener la típica botonera.</li><br>
+					<li><strong>autoplay:</strong> si el audio se ejecuta automáticamente. Se aconseja no utilizar este atributo...</li><br>
+					<li><strong>loop:</strong> si al terminar la reproducción el audio comienza a ejecutarse de nuevo.</li><br>
+					<li><strong>preload:</strong> nos permite definir características importantes del audio antes de reproducirlo.</li>
+				</ul><br><br>
+				
+				<p>Los fomatos soportados son: MP3 y ogg. </p>
+				
+				
+				
+			
+			</div>
+
+		</section>
+		
+		
+		<section class="seccion_horizontal">
+		<h1>Audio - Usando JavaScript</h1>
+	
+		
+			<div class= "contenido_izdo_audio2">
+				
+				<div id="controles_audio">
+				
+					<div id="botones_audio">
+						<button type="button" id="boton_play_pause"></button>
+					</div>
+					
+					<div id="barra_audio">
+						<div id="barra_progreso_audio"></div>
+					</div>
+				
+				</div>
+			
+				<audio id="mi_audio">
+				
+					<source src="audio/Tchaikovsky_Nocturne_orch.mp3" type="audio/mpeg">
+					<source src="audio/Tchaikovsky_Nocturne_orch.ogg" type="audio/ogg">
+
+					Tu navagador no soporta audio html5. Actualizalo!!!
+				</audio>
+			
+
+				
+
+				
+			</div>
+			
+			
+			<div class= "contenido_dcho_audio">
+			
+				<p><strong>HTML5 nos proporciona métodos, propiedades y eventos para manejar audio en nuestro DOM.</strong></p><br>
+				
+				<p>Esto nos permite cargar, pausar, parar nuestros audios así como establecer su duración y volumen de reproducción.</p><br>
+				
+				<p>Disponemos, además, de eventos DOM que nos notificarán del comienzo del audio, cuando éste es pausado, etc.<br><br>
+				
+				<p>Los controles de audio se pueden personalizar, del mismo modo que los de vídeo, mediante JavaScript y CSS.<br><br><br>
+				
+				<a class="links_texto" href="https://www.w3schools.com/tags/ref_av_dom.asp" target= "blank">AUDIO DOM REFERENCE</a><br><br>
+				
+				<a class="links_texto" href="https://www.online-convert.com/" target= "blank">ONLINE CONVERTER</a>
+
+			</div>
+		
+		</section>
+
+		</div><!--contenedor-->
+		
+		<footer>
+		
+			<div id="centrado_footer">
+				<div id="copy_footer">Copyright 2017&copy; - Joselu Cantero - joselustoner@gmail.com </div>
+				<div id="social_media">
+					<a href="https://es-la.facebook.com/Rammstein/" target="_blank"><img src="img/facebook.png"/></a>
+					<a href="https://twitter.com/thebeatles" target="_blank"><img src="img/twitter.png"/>
+					<a href="https://www.youtube.com/channel/UCYp3rk70ACGXQ4gFAiMr1SQ" target="_blank"><img src="img/youtube.png"/>
+				</div>
+			</div>
+		
+		</footer>
+		
+	</body>
+
+
+</html>

@@ -1,0 +1,1 @@
+Partiendo de una tabla, insertar dos botones: uno que añada una fila cada vez que es pulsado y uno que elimine una fila cada vez que es pulsado.

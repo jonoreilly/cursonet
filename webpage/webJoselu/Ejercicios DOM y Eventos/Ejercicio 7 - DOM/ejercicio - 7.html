@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<title>Cambiando propiedades</title>
+<style type="text/css">
+
+</style>
+<script type="text/javascript">
+
+function redimensionarIMG() {
+  var cnjIMG;
+
+
+     cnjIMG = document.getElementsByTagName('img');
+     for (var i=0; i<cnjIMG.length; i++) {
+        cnjIMG[i].attributes.getNamedItem('width').value /= 2;
+        cnjIMG[i].attributes.getNamedItem('height').value /= 2;
+        }
+  
+}
+ 
+function rotarIMG() {
+  var cnjIMG;
+  srcIMG = new Array();
+
+
+     cnjIMG = document.getElementsByTagName('img');
+     for (var i=0; i<cnjIMG.length; i++) {
+        srcIMG.push(cnjIMG[i].getAttribute('src')); 
+        }
+     for (var i=0; i<cnjIMG.length; i++) {
+        cnjIMG[i].setAttribute('src', srcIMG[(i+2)%3]);
+        }
+
+}
+
+function restaurarIMG(){
+
+		var cnjIMG;
+     cnjIMG = document.getElementsByTagName('img');
+	 cnjIMG[0].src="vibora.jpg";
+	 cnjIMG[1].src="erizo.jpg"
+	 cnjIMG[2].src="gato.jpg";
+	 cnjIMG[0].attributes[0].value = 172;
+	 cnjIMG[0].attributes[1].value = 132;
+	 cnjIMG[1].attributes[0].value = 132;
+	 cnjIMG[1].attributes[1].value = 132;
+	 cnjIMG[2].attributes[0].value = 192;
+	 cnjIMG[2].attributes[1].value = 132;
+
+
+}
+</script>
+</head>
+
+<body>
+
+<img width="172" height="132" alt="víbora de cascabel" src="vibora.jpg"> <img width="132" height="132" alt="erizo de mar" src="erizo.jpg"> <img width="192" height="132" alt="gato montés" src="gato.jpg"></p></div>
+
+<a href="#" onclick="redimensionarIMG();">Minimizar Imagen</a>
+
+<a href="#" onclick="rotarIMG();">Rotar Imagenes</a>
+
+<a href="#" onclick="restaurarIMG();">Restaurar Imagenes</a>
+
+</body>
+</html>
