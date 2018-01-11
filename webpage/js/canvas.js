@@ -32,6 +32,22 @@ function game(pantalla)
   bola.spdx = Math.random() * (1 - (-1)) + (-1);
   bola.spdy = Math.random() * (1 - (-1)) + (-1);
 
+  var intervalID = window.setInterval(refresh, 500);
+
+  function refresh()
+  {
+
+  }
+
+  function redraw()
+  {
+    pantalla.clearRect(0,0,1200,1000);
+
+    for (var i = 0; i < objetos.length; i++)
+    {
+      
+    }
+  }
 }
 
 
