@@ -17,11 +17,10 @@
 		</th>
 	</tr>
 
-	<tr>
 		@foreach (var item in Model)
 		{
 			<tr>
-				<td>
+				<td style='text-align:center' >
 					@Html.DisplayFor(model => item.CustomerID)
 				</td>
 				<td style='text-align:center' >
@@ -32,7 +31,6 @@
 				</td>
 			</tr>
 		}
-	</tr>
 
 </table>
 

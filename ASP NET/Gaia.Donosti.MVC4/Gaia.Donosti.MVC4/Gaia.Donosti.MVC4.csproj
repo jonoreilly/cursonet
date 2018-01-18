@@ -231,6 +231,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Controlador1\Details.cshtml" />
     <Content Include="Views\Controlador1\Index.cshtml" />
+    <Content Include="Views\Controlador1\Index3.cshtml" />
+    <Content Include="Views\Controlador1\_mostrarClientes.cshtml" />
+    <Content Include="Views\Controlador1\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -45,5 +45,44 @@ namespace Gaia.Donosti.MVC4.Controllers
             }
             return View("Index", listaClientes);
         }
+
+
+        public ActionResult Index3()
+        {
+            return View("Index3");
+        }
+
+        [ChildActionOnly]
+        public ActionResult _mostrarClientes ()
+        {
+            var cliente = context.Customer.Find(id);
+
+            if (cliente != null)
+            {
+                return PartialView("Details", cliente);
+            }
+            else
+            {
+                return HttpNotFound();
+            }
+        }
+
+        public ActionResult _vistaparcial()
+        {
+            return View("View");
+        }
+
+        public ActionResult _vistaparcial2()
+        {
+            return PartialView("_ViewStart");
+        }
+
+        [HttpPost]
+        public ActionResult addCustomer(Customer cliente)
+        {
+            context.Customer.Add(cliente);
+            context.SaveChanges();
+                return View();
+        }
     }
 }
