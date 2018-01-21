@@ -32,8 +32,13 @@ function game(pantalla)
   bola.spdx = Math.random() * (1 - (-1)) + (-1);
   bola.spdy = Math.random() * (1 - (-1)) + (-1);
 
-}
+  document.setInterval()
 
+  function refresh()
+  {
+
+  }
+}
 
 
 class objeto

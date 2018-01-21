@@ -733,9 +733,11 @@ namespace Multiformulario
             // 
             // cmb_IdProducto
             // 
-            this.cmb_IdProducto.Location = new System.Drawing.Point(193, 29);
+            this.cmb_IdProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmb_IdProducto.Location = new System.Drawing.Point(177, 29);
             this.cmb_IdProducto.Name = "cmb_IdProducto";
-            this.cmb_IdProducto.Size = new System.Drawing.Size(121, 21);
+            this.cmb_IdProducto.Size = new System.Drawing.Size(161, 21);
             this.cmb_IdProducto.TabIndex = 21;
             this.cmb_IdProducto.SelectionChangeCommitted += new System.EventHandler(this.cmb_IdProducto_SelectionChangeCommitted_1);
             // 
@@ -813,8 +815,8 @@ namespace Multiformulario
             this.tsb_CerrarFactura.Image = ((System.Drawing.Image)(resources.GetObject("tsb_CerrarFactura.Image")));
             this.tsb_CerrarFactura.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsb_CerrarFactura.Name = "tsb_CerrarFactura";
-            this.tsb_CerrarFactura.Size = new System.Drawing.Size(85, 22);
-            this.tsb_CerrarFactura.Text = "Cerrar Factura";
+            this.tsb_CerrarFactura.Size = new System.Drawing.Size(95, 22);
+            this.tsb_CerrarFactura.Text = "Guardar y cerrar";
             this.tsb_CerrarFactura.Click += new System.EventHandler(this.tsb_CerrarFactura_Click);
             // 
             // FrmCartera
@@ -869,26 +871,6 @@ namespace Multiformulario
             txt_LinSel.Text = numLinea.ToString();
         }
         
-
-        public void actualizarFacturas()
-        {
-            foreach (CsFacturas factura in listaFacturas)
-            {
-                factura.BaseImponible = 0;
-                factura.Iva = 0;
-                factura.TotalFactura = 0;
-                foreach (CsFactDetall facturalinea in listaLinFact)
-                {
-                    if (factura.IdFactura == facturalinea.IdFactura)
-                    {
-                        factura.BaseImponible += facturalinea.Importe;
-                        factura.Iva += facturalinea.Iva;
-                        factura.TotalFactura += facturalinea.TotalLinea;
-                    }
-                }
-            }
-        }
-
 
         public void actualizarLineas()
         {
@@ -971,8 +953,8 @@ namespace Multiformulario
                 listaFacturas.Remove(mifactura);
                 MessageBox.Show("Factura Borrada");
             }
-            actualizarLineas();
-            actualizarFacturas();
+            dgv_Facturas.Refresh();
+            dgv_LinFact.Refresh();
         }
 
 
@@ -988,6 +970,11 @@ namespace Multiformulario
             TextWriter escritor = new StreamWriter("Facturas.xml");
             serializador.Serialize(escritor, listaFacturas);
             escritor.Close();
+
+            XmlSerializer serializador2 = new XmlSerializer(typeof(List<CsFactDetall>));
+            TextWriter escritor2 = new StreamWriter("FacturasDetalladas.xml");
+            serializador2.Serialize(escritor2, listaLinFact);
+            escritor2.Close();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -995,13 +982,12 @@ namespace Multiformulario
             CsFactDetall subLinea = new CsFactDetall();
             foreach (CsFactDetall lineaFactura in listaLinFact)
             {
-                if (lineaFactura.Linea.ToString() == txt_LinSel.Text)
+                if (lineaFactura.Linea.ToString() == txt_LinSel.Text && lineaFactura.IdFactura.ToString() == txt_idfac_desg.Text)
                 {
                     subLinea = lineaFactura;
                     break;
                 }
             }
-            cmb_IdProducto.DataSource = listaProductos;
             cmb_IdProducto.SelectedValue = subLinea.IdProducto;
             nud_Cantidad.Value = subLinea.Cantidad;
             txt_LBaseImp.Text = subLinea.Importe.ToString();
@@ -1058,7 +1044,7 @@ namespace Multiformulario
 
             txt_BaseImp.Text = (lafactura.BaseImponible+((elProducto.Precio* (double)nud_Cantidad.Value)- lalinea.Importe)).ToString();
             txt_Iva.Text = (lafactura.Iva + ((elProducto.Precio* (double)nud_Cantidad.Value) * 21.0 / 100 - lalinea.Iva)).ToString();
-            txt_Total.Text = (((lafactura.BaseImponible * 21.0 / 100) + lafactura.BaseImponible)* (double)nud_Cantidad.Value).ToString();
+            txt_Total.Text = ((double.Parse(txt_BaseImp.Text) * 21.0 / 100) + double.Parse(txt_BaseImp.Text)).ToString();
         }
 
         private void btn_modificar_Click(object sender, EventArgs e)
@@ -1073,12 +1059,14 @@ namespace Multiformulario
                     break;
                 }
             }
-            
+            dgv_Facturas.Refresh();
+
             foreach (CsFactDetall linea in listaLinFact)
             {
-                if (linea.Linea.ToString() == txt_LinSel.Text.Trim())
+                if (linea.Linea.ToString() == txt_LinSel.Text && linea.IdFactura.ToString() == txt_idfac_desg.Text)
                 {
                     linea.NombreProducto = cmb_IdProducto.Text;
+                    linea.IdProducto = (int)cmb_IdProducto.SelectedValue;
                     linea.Cantidad = (int)nud_Cantidad.Value;
                     linea.Importe = double.Parse(txt_LBaseImp.Text);
                     linea.Iva = double.Parse(txt_LIVA.Text);
@@ -1086,8 +1074,7 @@ namespace Multiformulario
                     break;
                 }
             }
-            actualizarFacturas();
-            actualizarLineas();
+            dgv_LinFact.Refresh();
         }
     }
 }

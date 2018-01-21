@@ -37,7 +37,7 @@ namespace Multiformulario
 
             if (!File.Exists("NadaImportante.xml"))
             {
-                File.WriteAllText(".\\NadaImportante.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?> <ArrayOfCsClave xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"> \n </ArrayOfCsClave>");
+                File.WriteAllText("NadaImportante.xml", "<?xml version=\"1.0\" encoding=\"utf-8\"?> <ArrayOfCsClave xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"> \n </ArrayOfCsClave>");
             }
 
             XmlSerializer serializador = new XmlSerializer(typeof(List<CsClave>));
