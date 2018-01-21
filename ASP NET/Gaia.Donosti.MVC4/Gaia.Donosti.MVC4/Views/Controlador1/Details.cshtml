@@ -1,0 +1,16 @@
+﻿@model Gaia.Donosti.MVC4.Models.Customer
+
+@{
+	ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+	<legend>Cliente @Html.DisplayFor(model => model.CustomerID)</legend>
+	<p>@Html.DisplayNameFor(model => model.AccountNumber): @Html.DisplayFor(model => model.AccountNumber)</p>
+	<p>@Html.DisplayNameFor(model => model.ModifiedDate): @Html.DisplayFor(model => model.ModifiedDate)</p>
+	<p>@Html.DisplayNameFor(model => model.StoreID): @Html.DisplayFor(model => model.StoreID)</p>
+	<p>@Html.DisplayNameFor(model => model.TerritoryID): @Html.DisplayFor(model => model.TerritoryID)</p>
+</div>
+

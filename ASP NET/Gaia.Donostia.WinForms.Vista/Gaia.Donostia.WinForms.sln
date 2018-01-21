@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaia.Donostia.WinForms.Vista", "Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Vista.csproj", "{C69DC4BE-9BF7-4100-9C74-1E14C661DF65}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaia.Donostia.WinForms.Modelo", "Gaia.Donostia.WinForms.Modelo\Gaia.Donostia.WinForms.Modelo.csproj", "{79EA7D13-DA55-42A4-89B3-130F7DD57C19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gaia.Donostia.WinForms.Controlador", "Gaia.Donostia.WinForms.Controlador\Gaia.Donostia.WinForms.Controlador.csproj", "{E111012A-6BF7-445D-B44E-D64C36CE77EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C69DC4BE-9BF7-4100-9C74-1E14C661DF65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C69DC4BE-9BF7-4100-9C74-1E14C661DF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C69DC4BE-9BF7-4100-9C74-1E14C661DF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C69DC4BE-9BF7-4100-9C74-1E14C661DF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79EA7D13-DA55-42A4-89B3-130F7DD57C19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79EA7D13-DA55-42A4-89B3-130F7DD57C19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79EA7D13-DA55-42A4-89B3-130F7DD57C19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79EA7D13-DA55-42A4-89B3-130F7DD57C19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E111012A-6BF7-445D-B44E-D64C36CE77EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E111012A-6BF7-445D-B44E-D64C36CE77EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E111012A-6BF7-445D-B44E-D64C36CE77EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E111012A-6BF7-445D-B44E-D64C36CE77EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54E23F4F-6298-4D8D-B6AC-6AAF9DF812B9}
+	EndGlobalSection
+EndGlobal

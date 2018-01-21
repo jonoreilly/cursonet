@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Gaia.Donosti.MVC4.Models.Customer>
+
+@{
+    ViewBag.Title = "Index2";
+}
+
+<h2>Index</h2>
+
+<table border="1">
+
+	<tr>
+		<th>
+			@Html.DisplayNameFor(model => model.CustomerID)
+		</th>
+		<th>
+			@Html.DisplayNameFor(model => model.TerritoryID)
+		</th>
+	</tr>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td style='text-align:center' >
+					@Html.DisplayFor(model => item.CustomerID)
+				</td>
+				<td style='text-align:center' >
+					@Html.DisplayFor(model => item.TerritoryID)
+				</td>
+				<td>
+					@Html.ActionLink("Detalle de cliente", "Details", new { id = item.CustomerID }, new { target = "_blank" })
+				</td>
+			</tr>
+		}
+
+</table>
+
