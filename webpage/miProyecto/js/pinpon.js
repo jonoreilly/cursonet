@@ -165,7 +165,6 @@ class objeto
     this.posy += this.spdy*this.bspd;
   }
 }
-ç
 
 
 document.addEventListener('keydown', keyPressed.bind(event), "false");

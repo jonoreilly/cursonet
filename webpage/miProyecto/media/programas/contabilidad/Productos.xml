@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCsProductos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CsProductos>
+    <IdProducto>0</IdProducto>
+    <NombreProducto>Selecciona un producto</NombreProducto>
+    <Precio>0</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>3</IdProducto>
+    <NombreProducto>IncaCola</NombreProducto>
+    <Precio>2</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>4</IdProducto>
+    <NombreProducto>Cerveza</NombreProducto>
+    <Precio>3</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>5</IdProducto>
+    <NombreProducto>Zumo Limón</NombreProducto>
+    <Precio>4</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>1</IdProducto>
+    <NombreProducto>Mecacola</NombreProducto>
+    <Precio>1.9</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>6</IdProducto>
+    <NombreProducto>Batido de Fresa</NombreProducto>
+    <Precio>1.4</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>7</IdProducto>
+    <NombreProducto>GuarriCola</NombreProducto>
+    <Precio>0.95</Precio>
+  </CsProductos>
+  <CsProductos>
+    <IdProducto>8</IdProducto>
+    <NombreProducto>Farmatón Complex</NombreProducto>
+    <Precio>14.5</Precio>
+  </CsProductos>
+</ArrayOfCsProductos>
