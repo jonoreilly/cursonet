@@ -85,9 +85,13 @@ function colObj(obj1, obj2)
       {
         if((obj1.posy+obj1.alto+(obj1.spdy*obj1.bspd))>=(obj2.posy-obj2.alto+(obj2.spdy*obj2.bspd)))
         {
-          if(((obj1.alto+obj2.alto)<(obj1.posy-obj2.posy)>(0))||((obj1.alto+obj2.alto)<(-(obj1.posy-obj2.posy))>(0)))
+          if((obj1.alto+obj2.alto)<(obj1.posy-obj2.posy)>(0))
           {
-            obj1.bounce("y");
+            if(obj1.spdy<0){obj.bounce("y");}
+          }
+          if((obj1.alto+obj2.alto)<(-(obj1.posy-obj2.posy))>(0))
+          {
+            if(obj1.spd>0){obj1.bounce("y");}
           }
           else{
             obj1.spdy = (obj1.spdy+((obj1.posy-obj2.posy)/obj2.alto))/2;
@@ -167,7 +171,7 @@ class objeto
 }
 
 
-document.addEventListener('keydown', keyPressed.bind(event), "false");
+document.addEventListener('keydown', keyPressed.bind(document.event), "false");
 
 function keyPressed(handle)
 {
@@ -178,7 +182,7 @@ function keyPressed(handle)
 }
 
 
-document.addEventListener('keyup', keyReleased.bind(event), "false");
+document.addEventListener('keyup', keyReleased.bind(document.event), "false");
 
 function keyReleased(handle)
 {
