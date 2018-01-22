@@ -10,7 +10,7 @@ namespace mvclogin.Controllers
     public class PerfilController : Controller
     {
 
-        AccountEntities context = new AccountEntities();
+        AccountEntitiesReal context = new AccountEntitiesReal();
 
         User usuario = new User();
 
@@ -26,15 +26,24 @@ namespace mvclogin.Controllers
         }
 
         [HttpPost]
-        public ActionResult loginAction (User userData)
+        public ActionResult loginAction (User userParam)
         {
-            if(context.User.Find(userData.nombreUsuario) == null)
+            if(userParam.nombreUsuario == null || userParam.contraseña == null)
             {
-                usuario.nombreUsuario = userData.nombreUsuario;
-                usuario.contraseña = userData.contraseña;
+                return View("loginPage");
+            }
+
+            if(context.User.Find(userParam.nombreUsuario) == null)
+            {
+                usuario.nombreUsuario = userParam.nombreUsuario;
+                usuario.contraseña = userParam.contraseña;
                 usuario.rolID = 1;
                 context.User.Add(usuario);
-                usuario.usuarioID = context.User.Find(usuario.nombreUsuario).usuarioID;
+                User miusuario = context.User.Find(usuario.nombreUsuario);
+                if (miusuario != null)
+                {
+                    usuario.usuarioID = miusuario.usuarioID;
+                }
             }
             return RedirectToAction("../App/Index");
         }
@@ -61,7 +70,7 @@ namespace mvclogin.Controllers
             return View("Borrar");
         }
 
-        public ActionResult borrarAction (User usuario)
+        public ActionResult borrarAction ()
         {
             context.User.Remove(usuario);
             context.SaveChanges();
@@ -80,8 +89,10 @@ namespace mvclogin.Controllers
                 return View("notAllowed");
         }
 
-        public ActionResult editarAction ()
+        public ActionResult editarAction (User userParam)
         {
+            usuario.nombreUsuario = userParam.nombreUsuario;
+            usuario.contraseña = userParam.contraseña;
             return RedirectToAction("../App/Index");
         }
     }

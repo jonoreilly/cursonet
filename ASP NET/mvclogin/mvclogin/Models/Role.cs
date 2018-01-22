@@ -20,6 +20,7 @@ namespace mvclogin.Models
             this.User = new HashSet<User>();
         }
     
+        public int rolID { get; set; }
         public string rol { get; set; }
         public bool puedeEditar { get; set; }
         public bool puedeBorrar { get; set; }

@@ -7,9 +7,10 @@
       <Schema Namespace="AccountModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Role">
           <Key>
-            <PropertyRef Name="rol" />
+            <PropertyRef Name="rolID" />
           </Key>
-          <Property Name="rol" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="rolID" Type="int" Nullable="false" />
+          <Property Name="rol" Type="nvarchar(max)" Nullable="false" />
           <Property Name="puedeEditar" Type="bit" Nullable="false" />
           <Property Name="puedeBorrar" Type="bit" Nullable="false" />
         </EntityType>
@@ -17,20 +18,20 @@
           <Key>
             <PropertyRef Name="usuarioID" />
           </Key>
-          <Property Name="usuarioID" Type="int" Nullable="false" />
-          <Property Name="nombreUsuario" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="contraseña" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="rol" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="usuarioID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nombreUsuario" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="contraseña" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="rolID" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_User_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="1" />
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
-              <PropertyRef Name="rol" />
+              <PropertyRef Name="rolID" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="rol" />
+              <PropertyRef Name="rolID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -49,9 +50,10 @@
       <Schema Namespace="AccountModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Role">
           <Key>
-            <PropertyRef Name="rol" />
+            <PropertyRef Name="rolID" />
           </Key>
-          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="rolID" Type="Int32" Nullable="false" />
+          <Property Name="rol" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="puedeEditar" Type="Boolean" Nullable="false" />
           <Property Name="puedeBorrar" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
@@ -60,10 +62,10 @@
           <Key>
             <PropertyRef Name="usuarioID" />
           </Key>
-          <Property Name="usuarioID" Type="Int32" Nullable="false" />
-          <Property Name="nombreUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="contraseña" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="rol" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="usuarioID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contraseña" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="rolID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
         </EntityType>
         <Association Name="FK_User_Role">
@@ -71,14 +73,14 @@
           <End Role="User" Type="Self.User" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Role">
-              <PropertyRef Name="rol" />
+              <PropertyRef Name="rolID" />
             </Principal>
             <Dependent Role="User">
-              <PropertyRef Name="rol" />
+              <PropertyRef Name="rolID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AccountEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AccountEntitiesReal" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="User" EntityType="Self.User" />
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
@@ -91,10 +93,11 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AccountModelStoreContainer" CdmEntityContainer="AccountEntities">
+        <EntityContainerMapping StorageEntityContainer="AccountModelStoreContainer" CdmEntityContainer="AccountEntitiesReal">
           <EntitySetMapping Name="Role">
             <EntityTypeMapping TypeName="AccountModel.Role">
               <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="rolID" ColumnName="rolID" />
                 <ScalarProperty Name="rol" ColumnName="rol" />
                 <ScalarProperty Name="puedeEditar" ColumnName="puedeEditar" />
                 <ScalarProperty Name="puedeBorrar" ColumnName="puedeBorrar" />
@@ -107,7 +110,7 @@
                 <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="contraseña" ColumnName="contraseña" />
-                <ScalarProperty Name="rol" ColumnName="rol" />
+                <ScalarProperty Name="rolID" ColumnName="rolID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -18,5 +18,7 @@ namespace mvclogin.Models
         public string nombreUsuario { get; set; }
         public string contraseña { get; set; }
         public int rolID { get; set; }
+    
+        public virtual Role Role { get; set; }
     }
 }

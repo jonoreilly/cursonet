@@ -13,10 +13,10 @@ namespace mvclogin.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AccountEntities : DbContext
+    public partial class AccountEntitiesReal : DbContext
     {
-        public AccountEntities()
-            : base("name=AccountEntities")
+        public AccountEntitiesReal()
+            : base("name=AccountEntitiesReal")
         {
         }
     
