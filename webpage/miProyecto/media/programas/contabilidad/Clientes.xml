@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCsClientes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CsClientes>
+    <IdCliente>123</IdCliente>
+    <Nombre>elige un cliente</Nombre>
+    <Apellido>SC </Apellido>
+    <Nif>ASVC</Nif>
+    <Localidad>VD </Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>124</IdCliente>
+    <Nombre>pedro</Nombre>
+    <Apellido>tomas</Apellido>
+    <Nif>12343456t</Nif>
+    <Localidad>Errenteria</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>125</IdCliente>
+    <Nombre>Maider</Nombre>
+    <Apellido>Garcñia</Apellido>
+    <Nif>2145253e</Nif>
+    <Localidad>Legazpi</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>126</IdCliente>
+    <Nombre>Pepe</Nombre>
+    <Apellido>Billuelas</Apellido>
+    <Nif>432655666p</Nif>
+    <Localidad>Urretxu</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>127</IdCliente>
+    <Nombre>Iñaki</Nombre>
+    <Apellido>Bereziartua</Apellido>
+    <Nif>24681357p</Nif>
+    <Localidad>Donostia</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>128</IdCliente>
+    <Nombre>Ilargi</Nombre>
+    <Apellido>Taberna</Apellido>
+    <Nif>98127634y</Nif>
+    <Localidad>Oiartzun</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>130</IdCliente>
+    <Nombre>Cliente</Nombre>
+    <Apellido>Vicente</Apellido>
+    <Nif>87654321A</Nif>
+    <Localidad>Pasaia</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>131</IdCliente>
+    <Nombre>el último </Nombre>
+    <Apellido>que cierre</Apellido>
+    <Nif>6859695y</Nif>
+    <Localidad>Zumarraga</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>132</IdCliente>
+    <Nombre>pablo</Nombre>
+    <Apellido>pablete</Apellido>
+    <Nif>243643y2</Nif>
+    <Localidad>Ermua</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>133</IdCliente>
+    <Nombre>Perco</Nombre>
+    <Apellido>Los Palotes</Apellido>
+    <Nif>325135v</Nif>
+    <Localidad>Orereta</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>134</IdCliente>
+    <Nombre>fd</Nombre>
+    <Apellido>xzbff</Apellido>
+    <Nif>54w7</Nif>
+    <Localidad>dgS</Localidad>
+  </CsClientes>
+  <CsClientes>
+    <IdCliente>135</IdCliente>
+    <Nombre>cnvcgxhngf</Nombre>
+    <Apellido>dzfxnzgjmft</Apellido>
+    <Nif>457457e</Nif>
+    <Localidad>fbxz</Localidad>
+  </CsClientes>
+</ArrayOfCsClientes>
