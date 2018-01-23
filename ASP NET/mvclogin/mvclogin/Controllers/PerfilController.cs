@@ -20,32 +20,43 @@ namespace mvclogin.Controllers
             return View();
         }
 
-        public ActionResult loginPage ()
+        public ActionResult loginPage()
         {
             return View("loginPage");
         }
 
         [HttpPost]
-        public ActionResult loginAction (User userParam)
+        public ActionResult loginAction(User userParam)
         {
-            if(userParam.nombreUsuario == null || userParam.contraseña == null)
+            if (userParam.nombreUsuario == null || userParam.contraseña == null)
             {
+                ViewBag.error = "incorrect";
                 return View("loginPage");
             }
 
-            if(context.User.Find(userParam.nombreUsuario) == null)
+            if (context.User.SingleOrDefault(user => user.nombreUsuario == userParam.nombreUsuario) != null)
             {
-                usuario.nombreUsuario = userParam.nombreUsuario;
-                usuario.contraseña = userParam.contraseña;
-                usuario.rolID = 1;
-                context.User.Add(usuario);
-                User miusuario = context.User.Find(usuario.nombreUsuario);
-                if (miusuario != null)
-                {
-                    usuario.usuarioID = miusuario.usuarioID;
-                }
+                ViewBag.error = "again";
+                return View("LoginPage");
             }
+
+            usuario.nombreUsuario = userParam.nombreUsuario;
+            usuario.contraseña = userParam.contraseña;
+            usuario.rolID = 0;
+            context.User.Add(usuario);
+            User miusuario = context.User.SingleOrDefault(user => user.nombreUsuario == usuario.nombreUsuario);
+            context.SaveChanges();
+            if (miusuario != null)
+            {
+                usuario.usuarioID = miusuario.usuarioID;
+            }
+
             return RedirectToAction("../App/Index");
+        }
+
+        public ActionResult logout ()
+        {
+            return View("logout");
         }
 
         public ActionResult logoutAction()
@@ -54,13 +65,39 @@ namespace mvclogin.Controllers
             return RedirectToAction("../App/Index");
         }
 
+
         public ActionResult register()
         {
             return View("Register");
         }
-
-        public ActionResult registerAction ()
+        
+        [HttpPost]
+        public ActionResult registerAction(User userParam)
         {
+            if (userParam.nombreUsuario == null || userParam.contraseña == null)
+            {
+                ViewBag.error = "incorrect";
+                return View("Register");
+            }
+
+            if (context.User.SingleOrDefault(user => user.nombreUsuario == userParam.nombreUsuario) != null)
+            {
+                ViewBag.error = "again";
+                return View("Register");
+            }
+
+            usuario.nombreUsuario = userParam.nombreUsuario;
+            usuario.contraseña = userParam.contraseña;
+            usuario.rolID = 0;
+            context.User.Add(usuario);
+            User miusuario = context.User.SingleOrDefault(user => user.nombreUsuario == usuario.nombreUsuario);
+            context.SaveChanges();
+
+            if (miusuario != null)
+            {
+                usuario.usuarioID = miusuario.usuarioID;
+            }
+
             return RedirectToAction("../App/Index");
         }
 
@@ -70,30 +107,35 @@ namespace mvclogin.Controllers
             return View("Borrar");
         }
 
-        public ActionResult borrarAction ()
+        public ActionResult borrarAction()
         {
             context.User.Remove(usuario);
             context.SaveChanges();
             return View("logoutAction");
         }
-        
 
-        public ActionResult editar ()
+
+        public ActionResult editar()
         {
             return View("Editar");
         }
 
-        public ActionResult checkEditor ()
+        public ActionResult checkEditor()
         {
-                ViewBag.var = "editar";
-                return View("notAllowed");
+            ViewBag.var = "editar";
+            return View("notAllowed");
         }
 
-        public ActionResult editarAction (User userParam)
+        public ActionResult editarAction(User userParam)
         {
             usuario.nombreUsuario = userParam.nombreUsuario;
             usuario.contraseña = userParam.contraseña;
             return RedirectToAction("../App/Index");
+        }
+
+        public ActionResult backToApp ()
+        {
+            return View("../App/Index");
         }
     }
 }
