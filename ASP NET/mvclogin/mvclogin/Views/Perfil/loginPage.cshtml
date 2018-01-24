@@ -10,11 +10,6 @@
 <div>
 	@if (ViewBag.error != null)
 	{
-		if (ViewBag.error == "again")
-		{
-			<h2 style="color: red">* Ese nombre de usuario ya esta en uso. Prueba con otro *</h2>
-		}
-
 		if (ViewBag.error == "incorrect")
 		{
 			<h2 style="color: red">* Nombre de usuario o contraseña incorrectos *</h2>

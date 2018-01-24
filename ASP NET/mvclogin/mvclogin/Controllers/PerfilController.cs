@@ -28,30 +28,24 @@ namespace mvclogin.Controllers
         [HttpPost]
         public ActionResult loginAction(User userParam)
         {
-            if (userParam.nombreUsuario == null || userParam.contraseña == null)
+            if (!(userParam.nombreUsuario == null || userParam.contraseña == null))
             {
-                ViewBag.error = "incorrect";
-                return View("loginPage");
+
+                User elUsuario = context.User.SingleOrDefault(user => user.nombreUsuario == userParam.nombreUsuario);
+
+                if (elUsuario != null)
+                {
+
+                    if (elUsuario.contraseña == userParam.contraseña)
+                    {
+                        usuario = elUsuario;
+                        return RedirectToAction("../App/Index", usuario);
+                    }
+                }
             }
 
-            if (context.User.SingleOrDefault(user => user.nombreUsuario == userParam.nombreUsuario) != null)
-            {
-                ViewBag.error = "again";
-                return View("LoginPage");
-            }
-
-            usuario.nombreUsuario = userParam.nombreUsuario;
-            usuario.contraseña = userParam.contraseña;
-            usuario.rolID = 0;
-            context.User.Add(usuario);
-            User miusuario = context.User.SingleOrDefault(user => user.nombreUsuario == usuario.nombreUsuario);
-            context.SaveChanges();
-            if (miusuario != null)
-            {
-                usuario.usuarioID = miusuario.usuarioID;
-            }
-
-            return RedirectToAction("../App/Index");
+            ViewBag.error = "incorrect";
+            return View("loginPage");
         }
 
         public ActionResult logout ()
@@ -62,7 +56,7 @@ namespace mvclogin.Controllers
         public ActionResult logoutAction()
         {
             usuario = new User();
-            return RedirectToAction("../App/Index");
+            return RedirectToAction("../App/Index", usuario);
         }
 
 
@@ -98,7 +92,7 @@ namespace mvclogin.Controllers
                 usuario.usuarioID = miusuario.usuarioID;
             }
 
-            return RedirectToAction("../App/Index");
+            return RedirectToAction("../App/Index", usuario);
         }
 
 
@@ -130,12 +124,28 @@ namespace mvclogin.Controllers
         {
             usuario.nombreUsuario = userParam.nombreUsuario;
             usuario.contraseña = userParam.contraseña;
-            return RedirectToAction("../App/Index");
+            return RedirectToAction("../App/Index", usuario);
         }
+
+        public ActionResult listaPerfiles ()
+        {
+            var listaUsuarios = (from u in context.User
+                                 select new
+                                 {
+                                     u.nombreUsuario,
+                                     u.Role.rol
+                                 }).Take(20).ToList();
+            return View("listaPerfiles", listaUsuarios);
+        }
+
+        //public void listaPerfilesCargar()
+        //{
+        //    ViewBag.listaPerfiles = listaUsuarios;
+        //}
 
         public ActionResult backToApp ()
         {
-            return View("../App/Index");
+            return View("../App/Index", usuario);
         }
     }
 }

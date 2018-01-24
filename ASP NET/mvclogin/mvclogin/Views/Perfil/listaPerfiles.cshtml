@@ -1,0 +1,48 @@
+﻿@model IEnumerable<mvclogin.Models.User>
+
+@{
+	ViewBag.Title = "Listado de Perfiles";
+}
+
+
+<div>
+
+
+
+	<table>
+
+
+
+		<thead>
+
+
+			<tr>
+
+				<th style="min-width: 200px; text-align: center">
+					Nombre de usuario
+				</th>
+
+				<th style="min-width: 200px; text-align: center">
+					Rol
+				</th>
+
+			</tr>
+
+
+		</thead>
+
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					item.nombreUsuario
+				</td>
+				<td>
+					item.Role.rol
+				</td>
+			</tr>
+		}
+
+	</table>
+</div>
+

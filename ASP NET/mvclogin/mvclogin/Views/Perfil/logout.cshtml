@@ -1,12 +1,12 @@
 ﻿
-@{
+@*@{
     ViewBag.Title = "logout";
-}
+}*@
 
 <h2>¿Seguro que quieres cerrar la sesion?</h2>
 
-<button onclick='@Html.Action("logoutAction")' style="display: inline-block" />
-<button onclick='@Html.Action("backToApp")' style="display: inline-block" />
+<input type="button" value="Cerrar sesion" onclick="location.href='@Url.Action("logoutAction")'" style="display: inline-block" />
+<input type="button" value="Volver al menu" onclick="location.href='@Url.Action("backToApp")'" style="display: inline-block" />
 
 
 

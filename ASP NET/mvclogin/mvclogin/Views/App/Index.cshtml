@@ -1,4 +1,5 @@
-﻿
+﻿@model mvclogin.Models.User
+
 @{
     ViewBag.Title = "Index";
 }
@@ -22,10 +23,17 @@
 		</li>
 
 		<li>
-			@Html.ActionLink("Logear", "loginPage", "perfil")
+			@Html.ActionLink("Iniciar sesion", "loginPage", "perfil")
+		</li>
+
+		<li>
+			@Html.ActionLink("Cerrar sesion", "logout", "perfil")
 		</li>
 
 	</ul>
 
+	<h3>Tus datos</h3>
+	Nombre de usuario: @Html.Display(Model.nombreUsuario)
+	Rol: @Html.Display(Model.Role.rol)
 </body>
 
