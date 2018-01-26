@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using mvclogin.Models;
 
 namespace mvclogin.Controllers
 {
     public class AppController : Controller
     {
         // GET: App
-        public ActionResult Index()
+        public ActionResult Index(User modelo)
         {
-            return View();
+            return View(modelo);
         }
 
         public ActionResult login ()

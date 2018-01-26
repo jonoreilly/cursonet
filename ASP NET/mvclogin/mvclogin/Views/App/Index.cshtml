@@ -33,7 +33,8 @@
 	</ul>
 
 	<h3>Tus datos</h3>
-	Nombre de usuario: @Html.Display(Model.nombreUsuario)
-	Rol: @Html.Display(Model.Role.rol)
+	Nombre de usuario: @Html.DisplayFor(m => m.nombreUsuario)
+	<br />
+	Rol: @Html.DisplayFor(m => m.rolID)
 </body>
 

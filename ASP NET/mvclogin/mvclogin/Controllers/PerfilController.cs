@@ -39,7 +39,7 @@ namespace mvclogin.Controllers
                     if (elUsuario.contraseña == userParam.contraseña)
                     {
                         usuario = elUsuario;
-                        return RedirectToAction("../App/Index", usuario);
+                        return RedirectToAction("Index", "App", usuario);
                     }
                 }
             }

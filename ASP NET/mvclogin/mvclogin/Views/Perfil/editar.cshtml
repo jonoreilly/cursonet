@@ -10,14 +10,18 @@
 
 <div>
 
-	@using (Html.BeginForm("loginAction", "Perfil", FormMethod.Post, new { enctype = "multipart/form-data" }))
+	@using (Html.BeginForm("editarAction", "Perfil", FormMethod.Post, new { enctype = "multipart/form-data" }))
 	{
 		<p>
-			Usuario: @Html.EditorFor(model => model.nombreUsuario)
+			Nuevo suario: @Html.EditorFor(model => model.nombreUsuario)
 		</p>
 
 		<p>
-			Contraseña: @Html.PasswordFor(model => model.contraseña)
+			Nueva contraseña: @Html.PasswordFor(model => model.contraseña)
+		</p>
+
+		<p>
+			Repite la contraseña: @Html.PasswordFor(modelo => modelo.contraseña)
 		</p>
 
 		<input type="submit" value="log in" />
