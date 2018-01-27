@@ -1,5 +1,3 @@
-//import "juegoClases";
-
 class objeto
 {
   constructor(x, y, w, h, s, l)
@@ -98,7 +96,7 @@ class objeto
   }
 
 
-  checkfloor (map)
+  checkfloor ()
   {
     var colision = false;
     for (item of map.blocks)
@@ -118,7 +116,7 @@ class objeto
     this.colisionAbajo = colision;
   }
 
-  checksides (map)
+  checksides ()
   {
     var colisionD = false;
     var colisionI = false;
@@ -187,127 +185,8 @@ class mapa
     this.blocks = [];
   }
 
-  add (sx,sy,ex,ey,tipo, extra) //tipo ->  0 = duro, 1 = plataforma, 2 = escalera, 3 = dano
+  add (sx,sy,ex,ey,tipo, extra=[]) //tipo ->  0 = duro, 1 = plataforma, 2 = escalera, 3 = dano
   {
     this.blocks.push([sx,sy,ex,ey,tipo, extra]);
   }
 }
-
-
-//var background = "../media/sprites/background.png";
-
-
- var sprites_jugador = [[],[]];
- for (i = 0; i < 4; i++)
- {
-   sprites_jugador[0][i] = new Image(32,64);
-   sprites_jugador[0][i].src = "../media/sprites/soldado_izquierda"+i+".png";
-
-   sprites_jugador[1][i] = new Image(32,64);
-   sprites_jugador[1][i].src = "../media/sprites/soldado_derecha"+i+".png";
- }
-
-var backgrounds = [];
-for (i = 0; i < 2; i++)
-{
-  backgrounds[i] = new Image(1200, 600);
-  backgrounds[i].src = "../media/backgrounds/map"+i+".png";
-}
-
-var map0 = new mapa();
-map0.add(0,510, 424, 100, 0, false);
-map0.add(486, 510, 700, 600, 0, false);
-map0.add(582, 468, 800, 1000, 0, false);
-map0.add(1040, 85, 1300, 700, 0, false);
-map0.add(685, 368, 950, 688, 1, false);
-map0.add(790, 365, 809, 470, 2, false);
-map0.add(690, 258, 950, 278, 1, false);
-map0.add(906, 258, 927, 371, 2, false);
-map0.add(790, 365, 809, 470, 2, false);
-map0.add(248, 220, 634, 242, 0, false);
-map0.add(70, 192, 217, 208, 1, false);
-map0.add(78, 53, 99, 190, 2, false);
-map0.add(93, 57, 311, 72, 1, false);
-map0.add(314, 1, 360, 25, 4, [1050, 1080]);
-
-
-function inicio ()
-{
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-
-  game(ctx);
-}
-
-
-function game(ctx)
-{
-  var jugador = new objeto(20, 440, 32, 64, 5, sprites_jugador);
-  var listaobjetos = [jugador];
-
-
-  setInterval(refresh, 500, ctx, listaobjetos);
-}
-
-
-function refresh(ctx, objetos)
-{
-  redraw(ctx);
-  for (item of objetos)
-  {
-    item.checkfloor(map0);
-    item.checksides(map0);
-    item.touching(map0);
-    item.point();
-    item.move();
-    item.paint(ctx);
-  }
-}
-
-
-function redraw (ctx)
-{
-  ctx.drawImage(backgrounds[1], 0, 0);
-}
-
-
-
-dPressed = [false];
-aPressed = [false];
-wPressed = [false];
-sPressed = [false];
-
-
-document.addEventListener('keydown', keyPressed.bind(document.event), "false");
-
-function keyPressed(handle)
-{
-  if(handle.key == "a"){aPressed.pop();aPressed.push(true);}
-  else{
-    if(handle.key == "d"){dPressed.pop();dPressed.push(true);}
-  }
-
-  if(handle.key == "w"){wPressed.pop();wPressed.push(true);}
-  else{
-    if(handle.key == "s"){sPressed.pop();sPressed.push(true);}
-  }
-}
-
-document.addEventListener('keyup', keyReleased.bind(document.event), "false");
-
-function keyReleased(handle)
-{
-  if(handle.key == "a"){aPressed.pop();aPressed.push(false);}
-  else{
-    if(handle.key == "d"){dPressed.pop();dPressed.push(false);}
-  }
-
-  if(handle.key == "w"){wPressed.pop();wPressed.push(false);}
-  else{
-    if(handle.key == "s"){sPressed.pop();sPressed.push(false);}
-  }
-}
-
-
-
-window.addEventListener("load", inicio, "false");
