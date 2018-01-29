@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Multiformulario</name>
+    </assembly>
+    <members>
+        <member name="F:Multiformulario.FormInicio.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FormInicio.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Multiformulario.FormInicio.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Multiformulario.FrmCartera.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FrmCartera.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Multiformulario.FrmCartera.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Multiformulario.FrmFacturas.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FrmFacturas.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Multiformulario.FrmFacturas.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Multiformulario.FrmClientes.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FrmClientes.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Multiformulario.FrmClientes.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Multiformulario.FrmProductos.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FrmProductos.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Multiformulario.FrmProductos.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:Multiformulario.FormPrincipal.components">
+            <summary>
+            Variable del diseñador necesaria.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FormPrincipal.Dispose(System.Boolean)">
+            <summary>
+            Limpiar los recursos que se estén usando.
+            </summary>
+            <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
+        </member>
+        <member name="M:Multiformulario.FormPrincipal.InitializeComponent">
+            <summary>
+            Método necesario para admitir el Diseñador. No se puede modificar
+            el contenido de este método con el editor de código.
+            </summary>
+        </member>
+        <member name="F:Multiformulario.FrmUsuarios.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.FrmUsuarios.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Multiformulario.FrmUsuarios.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Multiformulario.Program.Main">
+            <summary>
+            Punto de entrada principal para la aplicación.
+            </summary>
+        </member>
+        <member name="T:Multiformulario.Properties.Resources">
+            <summary>
+              Clase de recurso fuertemente tipado para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:Multiformulario.Properties.Resources.ResourceManager">
+            <summary>
+              Devuelve la instancia ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:Multiformulario.Properties.Resources.Culture">
+            <summary>
+              Invalida la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos usando esta clase de recursos fuertemente tipados.
+            </summary>
+        </member>
+    </members>
+</doc>
