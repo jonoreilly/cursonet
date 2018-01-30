@@ -1,0 +1,6 @@
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuelaCursos\bin\Debug\clasesGesEscuelaCursos.dll
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuelaCursos\bin\Debug\clasesGesEscuelaCursos.pdb
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuelaCursos\obj\Debug\clasesGesEscuela.Cursos.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuelaCursos\obj\Debug\clasesGesEscuelaCursos.dll
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuelaCursos\obj\Debug\clasesGesEscuelaCursos.pdb
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuelaCursos\obj\Debug\clasesGesEscuela.Cursos.csprojResolveAssemblyReference.cache

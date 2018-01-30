@@ -1,0 +1,10 @@
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.FormEditor.resources
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\bin\Debug\blockNotas.exe.config
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\bin\Debug\blockNotas.exe
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\bin\Debug\blockNotas.pdb
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.exe
+C:\Users\usuario\Desktop\programas\soluciones\blockNotas\blockNotas\obj\Debug\blockNotas.pdb

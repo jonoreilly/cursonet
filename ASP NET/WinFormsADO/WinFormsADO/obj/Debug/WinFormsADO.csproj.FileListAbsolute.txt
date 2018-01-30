@@ -1,0 +1,11 @@
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\bin\Debug\Neptuno.mdb
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\bin\Debug\WinFormsADO.exe.config
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\bin\Debug\WinFormsADO.exe
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\bin\Debug\WinFormsADO.pdb
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.Form1.resources
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.exe
+C:\Users\usuario\Desktop\programas\ASP NET\WinFormsADO\WinFormsADO\obj\Debug\WinFormsADO.pdb

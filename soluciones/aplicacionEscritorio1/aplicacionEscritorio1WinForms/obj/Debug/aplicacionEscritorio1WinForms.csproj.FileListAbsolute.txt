@@ -1,0 +1,10 @@
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\bin\Debug\aplicacionEscritorio1WinForms.exe.config
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\bin\Debug\aplicacionEscritorio1WinForms.exe
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\bin\Debug\aplicacionEscritorio1WinForms.pdb
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.exe
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.pdb
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\soluciones\aplicacionEscritorio1\aplicacionEscritorio1WinForms\obj\Debug\aplicacionEscritorio1WinForms.FormEjemplo1.resources

@@ -1,0 +1,15 @@
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\MainWindow.g.cs
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\App.g.cs
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF_MarkupCompile.cache
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF_MarkupCompile.lref
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\bin\Debug\appWPF.exe.config
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\bin\Debug\appWPF.exe
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\bin\Debug\appWPF.pdb
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\MainWindow.baml
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.g.resources
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.exe
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.pdb
+C:\Users\usuario\Desktop\programas\soluciones\appWPF\appWPF\obj\Debug\appWPF.csprojResolveAssemblyReference.cache

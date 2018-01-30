@@ -1,0 +1,15 @@
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\Gaia.Donostia.WinFormsMVC.exe.config
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\Gaia.Donostia.WinFormsMVC.exe
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\Gaia.Donostia.WinFormsMVC.pdb
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\EntityFramework.dll
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\EntityFramework.xml
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.Vistas.FormClientes.resources
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.exe
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.pdb
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinFormsMVC\Gaia.Donostia.WinFormsMVC\obj\Debug\Gaia.Donostia.WinFormsMVC.Form1.resources

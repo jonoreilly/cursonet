@@ -1,0 +1,17 @@
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\bin\Debug\clasesGesEscuela.Vistas.exe.config
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\bin\Debug\clasesGesEscuela.Vistas.exe
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\bin\Debug\clasesGesEscuela.Vistas.pdb
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\MainWindow.g.cs
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\App.g.cs
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas_MarkupCompile.cache
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas_MarkupCompile.lref
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\MainWindow.baml
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.g.resources
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.exe
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\obj\Debug\clasesGesEscuela.Vistas.pdb
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\bin\Debug\clasesGesEscuelaCursos.dll
+C:\Users\usuario\Desktop\programas\soluciones\clasesGesEscuela\clasesGesEscuela.Vistas\bin\Debug\clasesGesEscuelaCursos.pdb

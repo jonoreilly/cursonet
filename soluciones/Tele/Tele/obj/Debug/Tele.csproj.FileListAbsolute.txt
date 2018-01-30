@@ -1,0 +1,7 @@
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\bin\Debug\Tele.exe.config
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\bin\Debug\Tele.exe
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\bin\Debug\Tele.pdb
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\obj\Debug\Tele.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\obj\Debug\Tele.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\obj\Debug\Tele.exe
+C:\Users\usuario\Desktop\programas\soluciones\Tele\Tele\obj\Debug\Tele.pdb

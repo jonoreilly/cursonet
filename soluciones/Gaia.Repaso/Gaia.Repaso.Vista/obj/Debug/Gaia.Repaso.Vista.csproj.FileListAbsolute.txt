@@ -1,0 +1,15 @@
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\bin\Debug\Gaia.Repaso.Vista.exe.config
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\bin\Debug\Gaia.Repaso.Vista.exe
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\bin\Debug\Gaia.Repaso.Vista.pdb
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\MainWindow.g.cs
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\App.g.cs
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista_MarkupCompile.cache
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista_MarkupCompile.lref
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\MainWindow.baml
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.g.resources
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.Properties.Resources.resources
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.exe
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.pdb
+C:\Users\usuario\Desktop\programas\soluciones\Gaia.Repaso\Gaia.Repaso.Vista\obj\Debug\Gaia.Repaso.Vista.csprojResolveAssemblyReference.cache

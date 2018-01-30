@@ -1,0 +1,11 @@
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\Gaia.Donostia.WinForms.Modelo.dll.config
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\Gaia.Donostia.WinForms.Modelo.dll
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\Gaia.Donostia.WinForms.Modelo.pdb
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\EntityFramework.dll
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\EntityFramework.xml
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\obj\Debug\Gaia.Donostia.WinForms.Modelo.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\obj\Debug\Gaia.Donostia.WinForms.Modelo.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\obj\Debug\Gaia.Donostia.WinForms.Modelo.dll
+C:\Users\usuario\Desktop\programas\ASP NET\Gaia.Donostia.WinForms.Vista\Gaia.Donostia.WinForms.Modelo\obj\Debug\Gaia.Donostia.WinForms.Modelo.pdb

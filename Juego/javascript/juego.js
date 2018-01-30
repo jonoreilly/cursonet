@@ -101,6 +101,7 @@ class objeto
   checkfloor (map)
   {
     var colision = false;
+    var item;
     for (item of map.blocks)
     {
       if ((this.posx < item[2]) && (this.posx+this.ancho > item[0]))
@@ -122,6 +123,7 @@ class objeto
   {
     var colisionD = false;
     var colisionI = false;
+    var item;
     for (item of map.blocks)
     {
       if ((this.posy < item[3]) && (this.posy+this.alto > item[1]))
@@ -151,6 +153,7 @@ class objeto
     var touchingE = false;
     var touchingD = false;
     var touchingT = false;
+    var item;
     for (item of map.blocks)
     {
       if ((this.posy < item[3]) && (this.posy+this.alto > item[1]))
@@ -253,6 +256,7 @@ function game(ctx)
 function refresh(ctx, objetos)
 {
   redraw(ctx);
+  var item;
   for (item of objetos)
   {
     item.checkfloor(map0);
