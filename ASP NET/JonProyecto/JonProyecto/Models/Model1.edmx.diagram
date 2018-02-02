@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f353e739ad94dcc96727c919c07e291" Name="Diagram1">
+        <EntityTypeShape EntityType="AnunciolandiaModel.Foto" Width="1.5" PointX="1.375" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnunciolandiaModel.Post" Width="1.5" PointX="4" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnunciolandiaModel.Rol" Width="1.5" PointX="9.625" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AnunciolandiaModel.User" Width="1.5" PointX="6.625" PointY="2.75" IsExpanded="true" />
+        <AssociationConnector Association="AnunciolandiaModel.FK_Foto_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="AnunciolandiaModel.FK_Foto_User" ManuallyRouted="false" ></AssociationConnector>
+        <AssociationConnector Association="AnunciolandiaModel.FK_Post_User" ManuallyRouted="false" />
+        <AssociationConnector Association="AnunciolandiaModel.FK_User_Rol" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
