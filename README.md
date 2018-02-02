@@ -1,5 +1,3 @@
-# cursonet
-
 - C#, ASP.NET, MVC
 
 - html5, css3, javascript
