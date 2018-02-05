@@ -7,23 +7,20 @@ using JonProyecto.Models;
 
 namespace JonProyecto.Controllers
 {
-    AnunciolandiaEntities context = new AnunciolandiaEntities();
-
     public class HomeController : Controller
     {
         AnunciolandiaEntities context = new AnunciolandiaEntities();
 
-        public ActionResult Index(object usuario)
-        {
-            if (usuario == null)
-            {
-                usuario = new 
-            }
 
-            return View("Index", usuario);
+        public ActionResult Index()
+        {
+            return View("Index");
         }
 
-
-        public ActionResult 
+        public ActionResult Test(string value)
+        {
+            ViewBag.Test = value;
+            return View("Test");
+        }
     }
 }

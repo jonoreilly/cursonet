@@ -1,0 +1,12 @@
+﻿
+
+
+<h2>Test</h2>
+
+	test cookies:
+	@foreach (var item in	Request.Cookies.AllKeys)
+	{
+		<p>
+			@Html.Raw(item) :  @Html.Raw(Request.Cookies[item].Value)
+		</p>
+	}

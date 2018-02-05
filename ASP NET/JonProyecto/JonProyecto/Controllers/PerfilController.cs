@@ -9,44 +9,61 @@ namespace JonProyecto.Controllers
 {
     public class PerfilController : Controller
     {
+        AnunciolandiaEntities context = new AnunciolandiaEntities();
+
         // GET: Perfil
-        public ActionResult LogIn(object usuario)
+        public ActionResult LogIn()
         {
-            return View("LogIn", usuario);
+            return View("LogIn");
         }
 
-        public ActionResult LogInAction (object usuario)
+        [HttpPost]
+        public ActionResult LogInAction (FormCollection formData)
         {
-            return HomeIndex(usuario);
-        }
-
-
-        public ActionResult Registrarse (object usuario)
-        {
-            return View("Registrarse", usuario);
-        }
-
-        public ActionResult RegistrarseAction(object usuario)
-        {
-            return HomeIndex(usuario);
+            Response.Cookies["userName"].Value = formData["username"];
+            return RedirectToAction("../Home/Test", new { value = formData["username"].ToString() });
+            //return HomeIndex();
         }
 
 
-        public ActionResult LogOut(object usuario)
+        public ActionResult Registrarse ()
         {
-            return HomeIndex(usuario);
+            return View("Registrarse");
+        }
+
+        [HttpPost]
+        public ActionResult RegistrarseAction(FormCollection formData)
+        {
+            if (context.User.Any(row => row.Nombre == formData["username"]))
+            {
+                ViewBag.Error = "Ese usuario ya existe";
+                return View("Registrarse");
+            }
+            User usuario = new User();
+            usuario.Nombre = formData["username"];
+            usuario.Contraseña = formData["password"];
+            usuario.RolId = 0;
+
+            Response.Cookies["userName"].Value = context.User.
+            return HomeIndex();
         }
 
 
-        public ActionResult EliminarCuenta(object usuario)
+        public ActionResult LogOut()
         {
-            return HomeIndex(usuario);
+            return HomeIndex();
         }
 
 
-        public ActionResult HomeIndex(object usuario)
+        public ActionResult EliminarCuenta()
         {
-            return RedirectToAction("../Home/Index", usuario);
+            return HomeIndex();
+        }
+
+
+        public ActionResult HomeIndex()
+        {
+            return RedirectToAction("../Home/Index");
         }
     }
 }
