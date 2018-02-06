@@ -20,9 +20,22 @@ namespace JonProyecto.Controllers
         [HttpPost]
         public ActionResult LogInAction (FormCollection formData)
         {
-            Response.Cookies["userName"].Value = formData["username"];
-            return RedirectToAction("../Home/Test", new { value = formData["username"].ToString() });
-            //return HomeIndex();
+            if (string.IsNullOrWhiteSpace(formData["username"]) || !formData["username"].All(char.IsLetterOrDigit))
+            {
+                ViewBag.Error = "Nombre de usuario invalido";
+                return View("LogIn");
+            }
+            
+
+            if (!context.User.Any(row => row.Nombre == formData["username"]))
+            {
+                ViewBag.Error = "Ese usuario no existe";
+                return View("LogIn");
+            }
+
+            ViewBag.Error = null;
+
+            return HomeIndex();
         }
 
 
@@ -34,17 +47,32 @@ namespace JonProyecto.Controllers
         [HttpPost]
         public ActionResult RegistrarseAction(FormCollection formData)
         {
+            if (string.IsNullOrWhiteSpace(formData["username"]) || !formData["username"].All(char.IsLetterOrDigit))
+            {
+                ViewBag.Error = "Nombre de usuario invalido";
+                return View("Registrarse");
+            }
+
+            if (string.IsNullOrWhiteSpace(formData["password"]) || !formData["password"].All(char.IsLetterOrDigit))
+            {
+                ViewBag.Error = "Contraseña invalida";
+                return View("Registrarse");
+            }
+
             if (context.User.Any(row => row.Nombre == formData["username"]))
             {
                 ViewBag.Error = "Ese usuario ya existe";
                 return View("Registrarse");
             }
+
+            ViewBag.Error = null;
+
             User usuario = new User();
             usuario.Nombre = formData["username"];
-            usuario.Contraseña = formData["password"];
+            usuario.Contraseña = formData["username"];
             usuario.RolId = 0;
 
-            Response.Cookies["userName"].Value = context.User.
+            Response.Cookies["userName"].Value = formData["username"];
             return HomeIndex();
         }
 

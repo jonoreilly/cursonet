@@ -14,6 +14,10 @@ namespace JonProyecto.Controllers
 
         public ActionResult Index()
         {
+            if (Request.Cookies["userName"] == null)
+            {
+                Response.Cookies["userName"].Value = "Guest";
+            }
             return View("Index");
         }
 

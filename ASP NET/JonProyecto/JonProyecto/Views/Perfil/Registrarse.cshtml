@@ -1,17 +1,16 @@
 ﻿
 @{
-	ViewBag.Title = "LogIn";
+    ViewBag.Title = "Registrarse";
 }
 
-<h2>LogIn</h2>
-
+<h2>Registrarse</h2>
 
 <p style="color: red">
 	@Html.Raw(ViewBag.Error)
 </p>
 
 
-@using (Html.BeginForm("LogInAction", "Perfil"))
+@using (Html.BeginForm("RegistrarseAction", "Perfil"))
 {
 	<p>
 		Nombre de Usuario:
@@ -23,7 +22,10 @@
 		<input type="password" maxlength="20" name="password" value="" />
 	</p>
 
-	<input type="submit" value="Iniciar sesion" />
+	<p>
+		Repite contraseña:
+		<input type="password" maxlength="20" name="password" value="" />
+	</p>
+
+	<input type="submit" />
 }
-<br />
-@Html.ActionLink("Registrarse", "Registrarse")

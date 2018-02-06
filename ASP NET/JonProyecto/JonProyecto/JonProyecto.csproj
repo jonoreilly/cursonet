@@ -240,6 +240,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Perfil\LogIn.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Perfil\Registrarse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
