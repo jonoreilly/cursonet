@@ -1,0 +1,41 @@
+﻿@model List<JonProyecto.Models.User>
+
+<table>
+
+	<tr>
+		<th>
+			ID
+		</th>
+		<th>
+			Usuario
+		</th>
+	</tr>
+
+	@foreach (var usuario in Model)
+	{
+		<tr>
+			<td>
+				@usuario.UserId
+			</td>
+			<td>
+				@usuario.Nombre
+			</td>
+		</tr>
+	}
+
+</table>
+<br />
+
+
+@using (Html.BeginForm("ListDeleteAction", "Home"))
+{
+	<li>
+		Nombre de Usuario:
+		<input type="text" maxlength="20" name="userName" value="" />
+	</li>
+
+	<li>
+		<input type="submit" value="Eliminar" />
+	</li>
+}
+

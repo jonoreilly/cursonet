@@ -6,24 +6,28 @@
 <h2>LogIn</h2>
 
 
-<p style="color: red">
+<p style="color: red; font-size: 40px">
 	@Html.Raw(ViewBag.Error)
 </p>
 
+<ul>
+	@using (Html.BeginForm("LogInAction", "Perfil"))
+	{
+		<li>
+			Nombre de Usuario:
+			<input type="text" maxlength="20" name="username" value="" />
+		</li>
 
-@using (Html.BeginForm("LogInAction", "Perfil"))
-{
-	<p>
-		Nombre de Usuario:
-		<input type="text" maxlength="20" name="username" value="" />
-	</p>
+		<li>
+			Contraseña:
+			<input type="password" maxlength="20" name="password" value="" />
+		</li>
 
-	<p>
-		Contraseña:
-		<input type="password" maxlength="20" name="password" value="" />
-	</p>
-
-	<input type="submit" value="Iniciar sesion" />
-}
-<br />
-@Html.ActionLink("Registrarse", "Registrarse")
+		<li>
+			<input type="submit" value="Iniciar sesion" />
+		</li>
+	}
+	<li>
+		@Html.ActionLink("Registrarse", "Registrarse")
+	</li>
+</ul>

@@ -3,10 +3,28 @@
 
 <h2>Test</h2>
 
-	test cookies:
-	@foreach (var item in	Request.Cookies.AllKeys)
+<p>
+	test cookies:<br />
+</p>
+<ul>
+	@foreach (var item in Request.Cookies.AllKeys)
 	{
-		<p>
+		<li>
 			@Html.Raw(item) :  @Html.Raw(Request.Cookies[item].Value)
-		</p>
+		</li>
 	}
+</ul>
+<br />
+<ul>
+	@using (Html.BeginForm("TestAction", "Home"))
+	{
+		<li>
+			Coockie:
+			<input type="text" maxlength="20" name="cookie" value="" />
+		</li>
+		
+		<li>
+			<input type="submit" value="Delete Cookie" />
+		</li>
+	}
+</ul>

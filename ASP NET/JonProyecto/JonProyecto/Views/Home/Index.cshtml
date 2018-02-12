@@ -4,4 +4,31 @@
 
 
 
+<div>
+	<h2>Anunciolandia</h2>
+	<br/>
+
+	<ul>
+		<li>
+			@Html.ActionLink("Iniciar sesion", "LogIn", "Perfil")
+		</li>
+		<li>
+			@Html.ActionLink("Registrarse", "Registrarse", "Perfil")
+		</li>
+		@if (ViewBag.AllowDelete)
+		{
+		<li>
+			@Html.ActionLink("Lista", "List")
+		</li>
+		<li>
+			@Html.ActionLink("Cookies", "test")
+		</li>
+		}
+	</ul>
+
+
+
+</div>
+
+
 

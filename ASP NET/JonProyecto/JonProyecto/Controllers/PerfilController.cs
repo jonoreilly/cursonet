@@ -18,28 +18,49 @@ namespace JonProyecto.Controllers
         }
 
         [HttpPost]
-        public ActionResult LogInAction (FormCollection formData)
+        public ActionResult LogInAction(FormCollection formData)
         {
-            if (string.IsNullOrWhiteSpace(formData["username"]) || !formData["username"].All(char.IsLetterOrDigit))
+            string nombre = formData["username"];
+            string contraseña = formData["password"];
+
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(char.IsLetterOrDigit))
             {
                 ViewBag.Error = "Nombre de usuario invalido";
                 return View("LogIn");
             }
-            
 
-            if (!context.User.Any(row => row.Nombre == formData["username"]))
+
+            if (!context.User.Any(row => row.Nombre == nombre))
             {
                 ViewBag.Error = "Ese usuario no existe";
                 return View("LogIn");
             }
 
+
+            var usuario = context.User.FirstOrDefault(row => row.Nombre == nombre);
+
+            if (string.IsNullOrWhiteSpace(contraseña) || !contraseña.All(char.IsLetterOrDigit) || usuario.Contraseña != contraseña)
+            {
+                ViewBag.Error = "Contraseña invalida";
+                return View("LogIn");
+            }
+
             ViewBag.Error = null;
+            Response.Cookies["userName"].Value = nombre;
+            Session["userName"] = nombre;
+           
 
             return HomeIndex();
         }
 
+        public ActionResult LogOut()
+        {
+            Response.Cookies["userName"].Expires = DateTime.Now.AddDays(-1);
+            return HomeIndex();
+        }
 
-        public ActionResult Registrarse ()
+
+        public ActionResult Registrarse()
         {
             return View("Registrarse");
         }
@@ -47,19 +68,21 @@ namespace JonProyecto.Controllers
         [HttpPost]
         public ActionResult RegistrarseAction(FormCollection formData)
         {
-            if (string.IsNullOrWhiteSpace(formData["username"]) || !formData["username"].All(char.IsLetterOrDigit))
+            string nombre = formData["userName"];
+
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(char.IsLetterOrDigit))
             {
                 ViewBag.Error = "Nombre de usuario invalido";
                 return View("Registrarse");
             }
 
-            if (string.IsNullOrWhiteSpace(formData["password"]) || !formData["password"].All(char.IsLetterOrDigit))
+            if (string.IsNullOrWhiteSpace(nombre) || !nombre.All(char.IsLetterOrDigit))
             {
                 ViewBag.Error = "Contraseña invalida";
                 return View("Registrarse");
             }
 
-            if (context.User.Any(row => row.Nombre == formData["username"]))
+            if (context.User.Any(row => row.Nombre == nombre))
             {
                 ViewBag.Error = "Ese usuario ya existe";
                 return View("Registrarse");
@@ -68,24 +91,59 @@ namespace JonProyecto.Controllers
             ViewBag.Error = null;
 
             User usuario = new User();
-            usuario.Nombre = formData["username"];
-            usuario.Contraseña = formData["username"];
+            usuario.Nombre = nombre;
+            usuario.Contraseña = nombre;
             usuario.RolId = 0;
+            try
+            {
+                context.User.Add(usuario);
+                context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Response.Cookies["Errores"].Value = e.ToString();
+                return RedirectToAction("../Home/test");
+            }
 
-            Response.Cookies["userName"].Value = formData["username"];
+            Response.Cookies["userName"].Value = nombre;
+          
             return HomeIndex();
         }
 
 
-        public ActionResult LogOut()
+
+        public ActionResult VerPerfil(string usuarioPerfil)
         {
+            if (usuarioPerfil == "Guest")
+            {
+                return HomeIndex();
+            }
+
+            return View("VerPerfil", usuarioPerfil);
+        }
+
+
+
+
+
+        public ActionResult EliminarCuenta(string usuarioNombre)
+        {
+            var toremove = context.User.FirstOrDefault(row => row.Nombre == usuarioNombre);
+            context.User.Remove(toremove);
+            context.SaveChanges();
             return HomeIndex();
         }
 
 
-        public ActionResult EliminarCuenta()
+
+        public bool CanDelete(string usuarioNombre)
         {
-            return HomeIndex();
+            var usuario = context.User.FirstOrDefault(row => row.Nombre == usuarioNombre);
+            if (usuario.Rol.CanDelete)
+            {
+                return true;
+            }
+            return false;
         }
 
 
