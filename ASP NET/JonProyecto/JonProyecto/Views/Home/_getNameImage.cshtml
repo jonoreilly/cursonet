@@ -1,0 +1,12 @@
+﻿@model JonProyecto.Models.User
+
+
+<span>
+	@Model.Nombre
+</span>
+<span>
+	@if (Model.FotoPerfilId != null)
+	{
+		<img src="@Url.Action("getImage", "perfil", Model.FotoPerfilId)" />
+	}
+</span>

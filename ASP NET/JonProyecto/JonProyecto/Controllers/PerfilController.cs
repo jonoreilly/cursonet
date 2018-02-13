@@ -1,9 +1,9 @@
-﻿using System;
+﻿using JonProyecto.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using JonProyecto.Models;
 
 namespace JonProyecto.Controllers
 {
@@ -11,13 +11,15 @@ namespace JonProyecto.Controllers
     {
         AnunciolandiaEntities context = new AnunciolandiaEntities();
 
-        // GET: Perfil
+
+        [AllowAnonymous]
         public ActionResult LogIn()
         {
             return View("LogIn");
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult LogInAction(FormCollection formData)
         {
             string nombre = formData["username"];
@@ -53,19 +55,21 @@ namespace JonProyecto.Controllers
             return HomeIndex();
         }
 
+        [Authorize]
         public ActionResult LogOut()
         {
             Response.Cookies["userName"].Expires = DateTime.Now.AddDays(-1);
             return HomeIndex();
         }
 
-
+        [AllowAnonymous]
         public ActionResult Registrarse()
         {
             return View("Registrarse");
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult RegistrarseAction(FormCollection formData)
         {
             string nombre = formData["userName"];
@@ -111,7 +115,7 @@ namespace JonProyecto.Controllers
         }
 
 
-
+        [Authorize]
         public ActionResult VerPerfil(string usuarioPerfil)
         {
             if (usuarioPerfil == "Guest")
@@ -123,9 +127,22 @@ namespace JonProyecto.Controllers
         }
 
 
+        [Authorize]
+        public ActionResult editarFotoPerfil()
+        {
+            return PartialView("_editarFotoPerfil");
+        }
+
+
+        [Authorize]
+        public ActionResult editarFotoPerfilAction()
+        {
+            return View();
+        }
 
 
 
+        [Authorize]
         public ActionResult EliminarCuenta(string usuarioNombre)
         {
             var toremove = context.User.FirstOrDefault(row => row.Nombre == usuarioNombre);
@@ -133,8 +150,9 @@ namespace JonProyecto.Controllers
             context.SaveChanges();
             return HomeIndex();
         }
+        
 
-
+        
 
         public bool CanDelete(string usuarioNombre)
         {

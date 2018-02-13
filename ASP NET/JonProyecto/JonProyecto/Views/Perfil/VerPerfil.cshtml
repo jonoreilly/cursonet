@@ -1,4 +1,26 @@
-﻿
+﻿@model JonProyecto.Models.User
+
+
+<div style="display: inline-block; width: 35%; height: auto">
+	<div>
+		<img style="max-height: 50%; max-width: 80%" src="@Url.Action("getImage", "Home", Model.FotoPerfilId)" />
+	</div>
+	<ul>
+		<li>
+			<h2>@Model.Nombre</h2>
+		</li>
+		<li>
+			<h3>@Model.Rol.Rol1</h3>
+		</li>
+	</ul>
+
+</div>
+
+<div style="display: inline-block; width: 65%">
+
+</div>
+
+
 <div class="patata">
 
 	@Html.ActionLink("Cerrar sesion", "LogOut", "Perfil")

@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using JonProyecto.Models;
 
+
 namespace JonProyecto.Controllers
 {
     public class HomeController : Controller
     {
         AnunciolandiaEntities context = new AnunciolandiaEntities();
 
-
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewBag.Allow = false;
@@ -19,53 +20,32 @@ namespace JonProyecto.Controllers
             {
                 Response.Cookies["userName"].Value = "Guest";
             }
-            ViewBag.AllowDelete = canDelete();
 
             return View("Index");
         }
         
 
-        public ActionResult Test(string value)
+       
+        public ActionResult getNameImage()
         {
-            ViewBag.Test = value;
-            return View("Test");
-        }
-
-        [HttpPost]
-        public ActionResult TestAction(FormCollection formData)
-        {
-            Response.Cookies[formData["cookie"]].Expires = DateTime.Now.AddDays(-1);
-            return RedirectToAction("Test");
+            string myname = User.Identity.Name;
+            User myuser = context.User.FirstOrDefault(row => row.Nombre == myname);
+            return PartialView("_getNameImage", myuser);
         }
 
 
-        public ActionResult List()
+        public FileContentResult getImage(int id)
         {
-            List<User> users = (from u in context.User
-                                orderby u.UserId ascending
-                                select u).ToList();
-
-            return View("List", users);
-        }
-
-        [HttpPost]
-        public ActionResult ListDeleteAction(FormCollection formData)
-        {
-            return RedirectToAction("EliminarCuenta", "perfil", new { usuarioNombre = formData["userName"] });
-        }
-
-        public bool canDelete ()
-        {
-            string username = Request.Cookies["userName"].Value;
-            if (!string.IsNullOrWhiteSpace(username))
+            Foto myFoto = context.Foto.FirstOrDefault(row => row.FotoId == id);
+            if (myFoto != null)
             {
-                User usuario = context.User.FirstOrDefault(row => row.Nombre == username);
-                if (usuario.Rol.CanDelete)
-                {
-                    return true;
-                }
+                return File(myFoto.FotoArchivo, myFoto.FotoTipo);
             }
-            return false;
+            else
+            {
+                return null;
+            }
         }
+
     }
 }

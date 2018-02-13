@@ -25,7 +25,7 @@ namespace JonProyecto.Models
         public int RolId { get; set; }
         public string Nombre { get; set; }
         public string Contraseña { get; set; }
-        public byte[] FotoPerfil { get; set; }
+        public Nullable<int> FotoPerfilId { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Foto> Foto { get; set; }

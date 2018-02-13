@@ -16,8 +16,10 @@ namespace JonProyecto.Models
     {
         public int FotoId { get; set; }
         public int UserId { get; set; }
-        public int PostId { get; set; }
+        public Nullable<int> PostId { get; set; }
         public System.DateTime UploadDate { get; set; }
+        public byte[] FotoArchivo { get; set; }
+        public string FotoTipo { get; set; }
     
         public virtual Post Post { get; set; }
         public virtual User User { get; set; }

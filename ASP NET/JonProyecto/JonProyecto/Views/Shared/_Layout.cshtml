@@ -25,8 +25,7 @@
                     <li>@Html.ActionLink("Publicar", "Subir", "Post")</li>
                 </ul>
 				<div class="usuario">
-					@Html.ActionLink(Request.Cookies["userName"].Value.ToString(), "VerPerfil", "Perfil", new { usuario_perfil = Request.Cookies["userName"].Value }, null)
-					<img src=""/>
+					@Html.Action("getNameImage", "Home")
 				</div>
             </div>
         </div>
