@@ -1,0 +1,21 @@
+﻿@model int
+
+<div class="row">
+
+	<div class="col-md-4" style="text-align: center">
+		<input type="button" value="Fecha" onclick="location.href='@Url.Action("Buscar", "Home", new { seleccionadp = 0 })'" />
+	</div>
+
+	<div class="col-md-4" style="text-align: center">
+		<input type="button" value="Usuario" onclick="location.href='@Url.Action("Buscar", "Home", new { seleccionadp = 1 })'" />
+	</div>
+
+	<div class="col-md-4" style="text-align: center">
+		<input type="button" value="Titulo" onclick="location.href='@Url.Action("Buscar", "Home", new { seleccionadp = 2 })'" />
+	</div>
+
+</div>
+
+
+
+@Html.Action("orderPosts", "home", Model)

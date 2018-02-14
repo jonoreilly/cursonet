@@ -28,14 +28,14 @@ namespace patata.Controllers
 
 
             return View(listarUsuarios());
-            
+
 
         }
 
         public List<User> listarUsuarios()
         {
             List<User> listaUsuarios = new List<User>();
-            foreach(var item in AccountController.onlineUsers)
+            foreach (var item in AccountController.onlineUsers)
             {
                 listaUsuarios.Add(context.User.FirstOrDefault(row => row.UserId == item));
             }
@@ -64,26 +64,76 @@ namespace patata.Controllers
             return RedirectToAction("Index", "Manage");
         }
 
-        public ActionResult verPerfil (string id)
+        public ActionResult verPerfil(string id)
         {
             User usuario = context.User.FirstOrDefault(row => row.UserId == id);
             return View("Perfil", usuario);
         }
 
-        public PartialViewResult ultimosPosts ()
+        public PartialViewResult orderPosts(int seleccionado = 0)
         {
-            List<Post> listaPosts = (from db in context.Post
-                                     orderby db.LastEdit
-                                     select db).Take(10).ToList();
-            
+            List<Post> listaPosts = new List<Post>();
+            switch (seleccionado)
+            {
+                case 2:
+                    listaPosts = (from db in context.Post
+                                  orderby db.Titulo
+                                  select db).Take(50).ToList();
+                    break;
+
+                case 1:
+                    listaPosts = (from db in context.Post
+                                  orderby db.UserId
+                                  select db).Take(50).ToList();
+                    break;
+
+                case 0:
+                default:
+                    listaPosts = (from db in context.Post
+                                  orderby db.LastEdit
+                                  select db).Take(50).ToList();
+                    break;
+            }
 
             return PartialView("_ultimosPosts", listaPosts);
         }
 
-        public ActionResult leerPost (Post modelo)
+        public ActionResult leerPost(Post modelo)
         {
             return View("leerPost", modelo);
         }
 
+        public ActionResult Buscar(int seleccionado = 0)
+        {
+            return View("Buscar", seleccionado);
+        }
+
+        public ActionResult Publicar()
+        {
+            return View("Publicar");
+        }
+
+        [HttpPost]
+        public ActionResult Publicar(FormCollection formData)
+        {
+
+            User myUser = new User();
+            myUser = context.User.FirstOrDefault(row => row.UserId == User.Identity.Name);
+            if (myUser == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+
+            Post myPost = new Post();
+            myPost.Titulo = formData["Titulo"];
+            myPost.Texto = formData["Texto"];
+            myPost.LastEdit = DateTime.Now;
+            myPost.UserId = myUser.UserId;
+
+            context.Post.Add(myPost);
+            context.SaveChanges();
+
+            return View("Index");
+        }
     }
 }
