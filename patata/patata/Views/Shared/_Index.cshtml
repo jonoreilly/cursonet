@@ -1,0 +1,12 @@
+﻿@model IEnumerable<patata.Models.User>
+
+<ul style="list-style-type: circle; background-color: lightgrey">
+
+	@foreach (var item in Model)
+	{
+		<li style="margin-left: 10%">
+			@Html.DisplayFor(patata => item.Nombre)
+		</li>
+	}
+
+</ul>

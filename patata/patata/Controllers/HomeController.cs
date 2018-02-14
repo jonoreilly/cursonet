@@ -13,9 +13,9 @@ namespace patata.Controllers
 
         public ActionResult Index()
         {
-            if(User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated)
             {
-                if(context.User.FirstOrDefault(row => row.UserId == User.Identity.Name) == null)
+                if (context.User.FirstOrDefault(row => row.UserId == User.Identity.Name) == null)
                 {
                     User myuser = new User();
                     myuser.UserId = User.Identity.Name;
@@ -25,9 +25,23 @@ namespace patata.Controllers
                     context.SaveChanges();
                 }
             }
+
+
+            return View(listarUsuarios());
             
-            return View();
+
         }
+
+        public List<User> listarUsuarios()
+        {
+            List<User> listaUsuarios = new List<User>();
+            foreach(var item in AccountController.onlineUsers)
+            {
+                listaUsuarios.Add(context.User.FirstOrDefault(row => row.UserId == item));
+            }
+            return listaUsuarios;
+        }
+
 
         public string getUserName()
         {
@@ -41,13 +55,35 @@ namespace patata.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult changeUsername(FormCollection formData)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            User myuser = context.User.FirstOrDefault(row => row.UserId == User.Identity.Name);
+            myuser.Nombre = formData["userName"];
+            context.SaveChanges();
+            return RedirectToAction("Index", "Manage");
         }
 
-        
+        public ActionResult verPerfil (string id)
+        {
+            User usuario = context.User.FirstOrDefault(row => row.UserId == id);
+            return View("Perfil", usuario);
+        }
+
+        public PartialViewResult ultimosPosts ()
+        {
+            List<Post> listaPosts = (from db in context.Post
+                                     orderby db.LastEdit
+                                     select db).Take(10).ToList();
+            
+
+            return PartialView("_ultimosPosts", listaPosts);
+        }
+
+        public ActionResult leerPost (Post modelo)
+        {
+            return View("leerPost", modelo);
+        }
+
     }
 }

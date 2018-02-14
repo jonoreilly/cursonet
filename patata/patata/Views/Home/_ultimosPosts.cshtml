@@ -1,0 +1,36 @@
+﻿@model List<patata.Models.Post>
+
+
+<table style="width: 100%; ">
+
+	<tr>
+		<th>
+			Usuario
+		</th>
+		<th>
+			Titulo
+		</th>
+		<th>
+			Fecha
+		</th>
+	</tr>
+	@foreach (patata.Models.Post item in Model)
+	{
+	
+	<tr>
+		<td>
+			@Html.Raw(item.User.Nombre)
+		</td>
+		<td>
+			@Html.Raw(item.Titulo)
+		</td>
+		<td>
+			@Html.Raw(item.LastEdit.ToLocalTime())
+		</td>
+		<td>
+			@Html.ActionLink("leer", "leerPost", "Home", item)
+		</td>
+	</tr>
+	}
+
+</table>

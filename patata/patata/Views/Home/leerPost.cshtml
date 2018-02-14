@@ -1,0 +1,30 @@
+﻿@model patata.Models.Post
+
+
+@{
+    ViewBag.Title = "leerPost";
+}
+
+
+<div style="margin-top: 10%">
+
+	<div style="width: 100%">
+		<ul class="postlist" style="width: 100%">
+			<li style="width: 50%">
+				<h2>
+					@Html.Raw(Model.Titulo)
+				</h2>
+			</li>
+			<li style="width: 49%; text-align: right">
+				<h3>
+					Posted by: @Html.Raw(Model.User.Nombre)
+				</h3>
+			</li>
+		</ul>
+	</div>
+	<div style="background-color: lightslategrey">
+		@Html.Raw(Model.Texto)
+	</div>
+
+</div>
+

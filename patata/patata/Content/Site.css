@@ -22,3 +22,21 @@ select,
 textarea {
     max-width: 280px;
 }
+
+th {
+	text-align: center;
+	border: 1px solid black;
+}
+td {
+	border: 1px solid #dddddd;
+	background-color: #EEEEEE;
+}
+
+.postlist ul {
+	text-decoration: none;
+	background-color: darkslategray;
+}
+
+	.postlist ul > li {
+		display: inline-block;
+	}

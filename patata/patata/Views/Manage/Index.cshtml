@@ -85,9 +85,14 @@
         </dd>
 		<dt>Nombre de usuario:</dt>
 		<dd>
-			<p>
+			@using (Html.BeginForm("changeUsername", "home", FormMethod.Post))
+			{
 				@Html.Action("getUserName", "Home")
-			</p>
+			<br />
+			<input type="text" name="userName" placeholder="Nuevo nombre"/>
+			<input type="submit" value="Cambiar nombre de usuario">
+			
+			}
 		</dd>
     </dl>
 </div>
