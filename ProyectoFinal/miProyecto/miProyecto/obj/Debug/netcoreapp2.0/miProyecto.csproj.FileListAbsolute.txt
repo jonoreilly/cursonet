@@ -1,0 +1,8 @@
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\bin\Debug\netcoreapp2.0\miProyecto.deps.json
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\bin\Debug\netcoreapp2.0\miProyecto.runtimeconfig.json
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\bin\Debug\netcoreapp2.0\miProyecto.runtimeconfig.dev.json
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\bin\Debug\netcoreapp2.0\miProyecto.dll
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\obj\Debug\netcoreapp2.0\miProyecto.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\obj\Debug\netcoreapp2.0\miProyecto.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\obj\Debug\netcoreapp2.0\miProyecto.AssemblyInfoInputs.cache
+C:\Users\usuario\Desktop\programas\ProyectoFinal\miProyecto\miProyecto\obj\Debug\netcoreapp2.0\miProyecto.AssemblyInfo.cs

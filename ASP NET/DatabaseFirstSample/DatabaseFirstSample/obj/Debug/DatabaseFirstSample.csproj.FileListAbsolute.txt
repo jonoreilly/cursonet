@@ -1,0 +1,11 @@
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\DatabaseFirstSample.exe.config
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\DatabaseFirstSample.exe
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\DatabaseFirstSample.pdb
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\EntityFramework.dll
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\EntityFramework.xml
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\obj\Debug\DatabaseFirstSample.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\obj\Debug\DatabaseFirstSample.csproj.CoreCompileInputs.cache
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\obj\Debug\DatabaseFirstSample.exe
+C:\Users\usuario\Desktop\programas\ASP NET\DatabaseFirstSample\DatabaseFirstSample\obj\Debug\DatabaseFirstSample.pdb
